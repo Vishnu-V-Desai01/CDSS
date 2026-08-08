@@ -1,0 +1,10 @@
+CIT-TEST-01:
+  type: PRIMARY_STUDY
+  title: "Test citation"
+  authors: "Test authors"
+  year: 2020
+  evidence_grade: B
+  table_or_figure: "Table 1"
+  extracted_by: "test"
+  extracted_on: "2026-08-08"
+  checked_by: null

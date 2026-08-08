@@ -1,0 +1,55 @@
+schema_version: "1.0.0"
+condition_id: PULMONARY_EMBOLISM
+display_name: "Test condition"
+class: CANDIDATE
+visibility: REPORTED
+enabled: true
+verification_status: unverified
+
+priors:
+  ED_UNDIFFERENTIATED_CHEST_PAIN:
+    weight: 0.040
+    citation_id: CIT-TEST-01
+    population: "Test population"
+    verification_status: unverified
+
+dependency_groups: []
+
+features:
+  - feature_id: HX_TEST_FEATURE
+    tier: HISTORY
+    dependency_group: null
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 1
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 2.33
+        derived_from: {sensitivity: 0.35, specificity: 0.85, n: 100, prevalence_in_study: 0.2}
+        citation_id: CIT-TEST-01
+      - value: ABSENT
+        lr: 0.76
+        derived_from: {sensitivity: 0.35, specificity: 0.85, n: 100, prevalence_in_study: 0.2}
+        citation_id: CIT-TEST-01
+      - value: INDETERMINATE
+        lr: 1.00
+        citation_id: null
+
+expected_profile:
+  - feature_id: HX_TEST_FEATURE
+    expected_state: "PRESENT"
+    weight: 1
+    hallmark: false
+
+red_flag_links: []
+mimics: []
+disposition_guidance: "Test guidance."
+
+provenance:
+  authors: ["test"]
+  clinical_reviewer: null
+  created: "2026-08-08"
+  last_reviewed: null
+  review_due: null

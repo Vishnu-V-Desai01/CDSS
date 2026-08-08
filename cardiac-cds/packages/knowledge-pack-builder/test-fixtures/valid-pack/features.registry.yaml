@@ -1,0 +1,6 @@
+HX_TEST_FEATURE:
+  feature_id: HX_TEST_FEATURE
+  prompt: "Is the test feature present?"
+  tier: HISTORY
+  dependency_group: null
+  state_values: [PRESENT, ABSENT, INDETERMINATE]

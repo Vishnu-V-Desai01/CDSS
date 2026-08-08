@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cds-cv.local/schema/features-registry.schema.json",
+  "title": "FeatureRegistryFile",
+  "description": "features.registry.yaml. Canonical prompt/tier/dependency_group/state values for every feature_id. Condition files must match these byte-for-byte (§1.6).",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["feature_id", "prompt", "tier", "dependency_group", "state_values"],
+    "properties": {
+      "feature_id": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+      "prompt": { "type": "string", "minLength": 1 },
+      "tier": { "type": "string", "enum": ["HISTORY", "BEDSIDE", "NEAR_BEDSIDE", "IMAGING"] },
+      "dependency_group": { "type": ["string", "null"] },
+      "state_values": {
+        "type": "array",
+        "minItems": 2,
+        "items": { "type": "string" },
+        "uniqueItems": true
+      }
+    }
+  }
+}

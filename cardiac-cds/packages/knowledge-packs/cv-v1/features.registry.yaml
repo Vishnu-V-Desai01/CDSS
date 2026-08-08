@@ -1,0 +1,34 @@
+HX_PREVIOUS_VTE:
+  feature_id: HX_PREVIOUS_VTE
+  prompt: "Has the patient had a previous confirmed DVT or PE?"
+  tier: HISTORY
+  dependency_group: null
+  state_values: [PRESENT, ABSENT, INDETERMINATE]
+
+VS_SPO2_ROOM_AIR:
+  feature_id: VS_SPO2_ROOM_AIR
+  prompt: "What is the SpO2 on room air?"
+  tier: BEDSIDE
+  dependency_group: OXYGENATION
+  state_values: [GTE_95, 90_TO_94, LT_90, INDETERMINATE]
+
+VS_HEART_RATE:
+  feature_id: VS_HEART_RATE
+  prompt: "What is the heart rate?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [LT_60, 60_TO_99, 100_TO_119, GTE_120, INDETERMINATE]
+
+EX_UNILATERAL_LEG_SWELLING:
+  feature_id: EX_UNILATERAL_LEG_SWELLING
+  prompt: "Is there unilateral leg swelling or calf tenderness?"
+  tier: BEDSIDE
+  dependency_group: DVT_SIGNS
+  state_values: [PRESENT, ABSENT, INDETERMINATE]
+
+LAB_DDIMER_HIGHSENS:
+  feature_id: LAB_DDIMER_HIGHSENS
+  prompt: "What was the high-sensitivity D-dimer result?"
+  tier: NEAR_BEDSIDE
+  dependency_group: null
+  state_values: [POSITIVE, NEGATIVE, INDETERMINATE]

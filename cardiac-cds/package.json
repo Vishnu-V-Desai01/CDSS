@@ -1,0 +1,24 @@
+{
+  "name": "cardiac-cds",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Cardiovascular clinical decision support — foundation per CDS-CV-FOUNDATION-SPEC-v1.0",
+  "workspaces": [
+    "packages/schema",
+    "packages/shared-types",
+    "packages/knowledge-pack-builder",
+    "packages/engine",
+    "packages/api"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "pack:build": "npm run build --workspace=@cds/knowledge-pack-builder && node packages/knowledge-pack-builder/dist/cli.js build packages/knowledge-packs/cv-v1 --out packages/knowledge-packs/cv-v1/dist",
+    "pack:validate": "npm run build --workspace=@cds/knowledge-pack-builder && node packages/knowledge-pack-builder/dist/cli.js validate packages/knowledge-packs/cv-v1"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5",
+    "@types/node": "^22.5.0"
+  }
+}

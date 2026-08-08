@@ -1,0 +1,168 @@
+schema_version: "1.0.0"
+condition_id: PULMONARY_EMBOLISM
+display_name: "Pulmonary embolism"
+class: CANDIDATE
+visibility: REPORTED
+enabled: true
+verification_status: unverified
+
+priors:
+  ED_UNDIFFERENTIATED_CHEST_PAIN:
+    weight: 0.040
+    citation_id: CIT-PE-PRIOR-01
+    population: "Adults, ED, non-traumatic chest pain and/or dyspnoea"
+    verification_status: unverified
+  PRIMARY_CARE_CHEST_PAIN:
+    weight: 0.005
+    citation_id: CIT-PE-PRIOR-02
+    population: "Adults, general practice, chest pain presenting complaint"
+    verification_status: unverified
+
+dependency_groups:
+  - group_id: DVT_SIGNS
+    redundancy_lambda: 0.35
+    rationale: "Leg swelling and calf tenderness co-occur; placeholder group with one member pending more DVT-sign features."
+  - group_id: OXYGENATION
+    redundancy_lambda: 0.40
+    rationale: "SpO2 is physiologically coupled to respiratory rate and dyspnoea (not yet modelled in this trimmed file)."
+
+features:
+  - feature_id: HX_PREVIOUS_VTE
+    tier: HISTORY
+    dependency_group: null
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 1
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 2.33
+        derived_from: {sensitivity: 0.35, specificity: 0.85, n: 1121, prevalence_in_study: 0.23}
+        citation_id: CIT-PE-VTE-01
+      - value: ABSENT
+        lr: 0.76
+        derived_from: {sensitivity: 0.35, specificity: 0.85, n: 1121, prevalence_in_study: 0.23}
+        citation_id: CIT-PE-VTE-01
+      - value: INDETERMINATE
+        lr: 1.00
+        citation_id: null
+
+  - feature_id: VS_SPO2_ROOM_AIR
+    tier: BEDSIDE
+    dependency_group: OXYGENATION
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 1
+    verification_status: unverified
+    states:
+      - value: GTE_95
+        lr: 0.60
+        citation_id: CIT-PE-VS-02
+      - value: 90_TO_94
+        lr: 2.10
+        citation_id: CIT-PE-VS-02
+      - value: LT_90
+        lr: 3.00
+        citation_id: CIT-PE-VS-02
+      - value: INDETERMINATE
+        lr: 1.00
+        citation_id: null
+
+  - feature_id: VS_HEART_RATE
+    tier: BEDSIDE
+    dependency_group: null
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 1
+    verification_status: unverified
+    states:
+      - value: LT_60
+        lr: 0.60
+        citation_id: CIT-PE-VS-01
+      - value: 60_TO_99
+        lr: 0.70
+        citation_id: CIT-PE-VS-01
+      - value: 100_TO_119
+        lr: 1.80
+        citation_id: CIT-PE-VS-01
+      - value: GTE_120
+        lr: 2.40
+        citation_id: CIT-PE-VS-01
+      - value: INDETERMINATE
+        lr: 1.00
+        citation_id: null
+
+  - feature_id: EX_UNILATERAL_LEG_SWELLING
+    tier: BEDSIDE
+    dependency_group: DVT_SIGNS
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 2
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 2.50
+        derived_from: {sensitivity: 0.30, specificity: 0.88, n: 1121, prevalence_in_study: 0.23}
+        citation_id: CIT-PE-WELLS-03
+      - value: ABSENT
+        lr: 0.80
+        derived_from: {sensitivity: 0.30, specificity: 0.88, n: 1121, prevalence_in_study: 0.23}
+        citation_id: CIT-PE-WELLS-03
+      - value: INDETERMINATE
+        lr: 1.00
+        citation_id: null
+
+  - feature_id: LAB_DDIMER_HIGHSENS
+    tier: NEAR_BEDSIDE
+    dependency_group: null
+    acquisition_cost: 5
+    prerequisite: null
+    invasiveness: MINOR
+    turnaround_minutes: 45
+    verification_status: unverified
+    states:
+      - value: POSITIVE
+        lr: 1.70
+        citation_id: CIT-PE-DDIMER-01
+      - value: NEGATIVE
+        lr: 0.09
+        citation_id: CIT-PE-DDIMER-01
+      - value: INDETERMINATE
+        lr: 1.00
+        citation_id: null
+
+expected_profile:
+  - feature_id: VS_SPO2_ROOM_AIR
+    expected_state: ["90_TO_94", "LT_90"]
+    weight: 3
+    hallmark: false
+  - feature_id: VS_HEART_RATE
+    expected_state: ["100_TO_119", "GTE_120"]
+    weight: 2
+    hallmark: false
+  - feature_id: EX_UNILATERAL_LEG_SWELLING
+    expected_state: "PRESENT"
+    weight: 2
+    hallmark: false
+  - feature_id: LAB_DDIMER_HIGHSENS
+    expected_state: "POSITIVE"
+    weight: 4
+    hallmark: true
+
+red_flag_links: ["RF-01", "RF-05", "RF-06", "RF-07", "RF-09", "RF-12"]
+mimics: ["ACUTE_PERICARDITIS", "SHADOW_ANXIETY_PANIC", "SHADOW_DANGEROUS_OOS"]
+disposition_guidance: >
+  PE cannot be excluded by clinical features alone. Where probability is
+  non-trivial, formal risk stratification and definitive imaging pathways
+  apply. This engine does not implement or substitute for those pathways.
+
+provenance:
+  authors: ["chat0"]
+  clinical_reviewer: null
+  created: "2026-08-07"
+  last_reviewed: null
+  review_due: null

@@ -1,0 +1,83 @@
+CIT-PE-PRIOR-01:
+  type: PRIMARY_STUDY
+  title: "Placeholder — ED chest pain PE prevalence"
+  authors: "TBD"
+  year: 2020
+  evidence_grade: D
+  table_or_figure: "TBD"
+  extracted_by: "chat0"
+  extracted_on: "2026-08-07"
+  checked_by: null
+  notes: "Placeholder value pending clinical lead verification, see spec §0.3."
+
+CIT-PE-PRIOR-02:
+  type: PRIMARY_STUDY
+  title: "Placeholder — primary care chest pain PE prevalence"
+  authors: "TBD"
+  year: 2020
+  evidence_grade: D
+  table_or_figure: "TBD"
+  extracted_by: "chat0"
+  extracted_on: "2026-08-07"
+  checked_by: null
+  notes: "Placeholder value pending clinical lead verification, see spec §0.3."
+
+CIT-PE-VTE-01:
+  type: PRIMARY_STUDY
+  title: "Placeholder — prior VTE as a risk factor for PE"
+  authors: "TBD"
+  year: 2020
+  evidence_grade: D
+  table_or_figure: "TBD"
+  extracted_by: "chat0"
+  extracted_on: "2026-08-07"
+  checked_by: null
+  notes: "Placeholder value pending clinical lead verification."
+
+CIT-PE-VS-01:
+  type: PRIMARY_STUDY
+  title: "Placeholder — heart rate bands in PE"
+  authors: "TBD"
+  year: 2020
+  evidence_grade: D
+  table_or_figure: "TBD"
+  extracted_by: "chat0"
+  extracted_on: "2026-08-07"
+  checked_by: null
+  notes: "Placeholder value pending clinical lead verification."
+
+CIT-PE-VS-02:
+  type: PRIMARY_STUDY
+  title: "Placeholder — SpO2 bands in PE"
+  authors: "TBD"
+  year: 2020
+  evidence_grade: D
+  table_or_figure: "TBD"
+  extracted_by: "chat0"
+  extracted_on: "2026-08-07"
+  checked_by: null
+  notes: "Placeholder value pending clinical lead verification."
+
+CIT-PE-WELLS-03:
+  type: PRIMARY_STUDY
+  title: "Placeholder — Wells criteria derivation cohort, unilateral leg swelling"
+  authors: "TBD"
+  year: 2001
+  evidence_grade: B
+  table_or_figure: "Table 2, derivation cohort"
+  extracted_by: "chat0"
+  extracted_on: "2026-08-07"
+  checked_by: null
+  notes: "Placeholder value pending clinical lead verification. Derivation cohort only."
+
+CIT-PE-DDIMER-01:
+  type: SYSTEMATIC_REVIEW
+  title: "Placeholder — high-sensitivity D-dimer meta-analysis"
+  authors: "TBD"
+  year: 2021
+  evidence_grade: A
+  table_or_figure: "TBD"
+  extracted_by: "chat0"
+  extracted_on: "2026-08-07"
+  checked_by: null
+  notes: "Placeholder value pending clinical lead verification."

@@ -1,0 +1,178 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cds-cv.local/schema/condition.schema.json",
+  "title": "ConditionFile",
+  "description": "One condition knowledge file. Per CDS-CV-FOUNDATION-SPEC-v1.0 §1.4. No optional top-level fields.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "condition_id", "display_name", "class", "visibility",
+    "enabled", "priors", "features", "expected_profile", "dependency_groups",
+    "red_flag_links", "mimics", "disposition_guidance", "provenance", "verification_status"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "condition_id": {
+      "type": "string",
+      "enum": [
+        "PULMONARY_EMBOLISM", "UNSTABLE_ANGINA", "CONGESTIVE_HEART_FAILURE", "ACUTE_PERICARDITIS",
+        "SHADOW_ANXIETY_PANIC", "SHADOW_MUSCULOSKELETAL", "SHADOW_GORD", "SHADOW_DANGEROUS_OOS", "SHADOW_OTHER"
+      ]
+    },
+    "display_name": { "type": "string", "minLength": 1 },
+    "class": { "type": "string", "enum": ["CANDIDATE", "SHADOW", "SHADOW_DANGEROUS"] },
+    "visibility": { "type": "string", "enum": ["REPORTED", "HIDDEN_IN_UNKNOWN", "HIDDEN_UNLESS_THRESHOLD"] },
+    "enabled": { "type": "boolean" },
+    "verification_status": { "$ref": "#/definitions/verificationStatus" },
+
+    "priors": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "patternProperties": {
+        "^(ED_UNDIFFERENTIATED_CHEST_PAIN|PRIMARY_CARE_CHEST_PAIN|PREHOSPITAL|TELEHEALTH_TRIAGE)$": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["weight", "citation_id", "population", "verification_status"],
+          "properties": {
+            "weight": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+            "citation_id": { "type": "string", "minLength": 1 },
+            "population": { "type": "string", "minLength": 1 },
+            "verification_status": { "$ref": "#/definitions/verificationStatus" }
+          }
+        }
+      }
+    },
+
+    "dependency_groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["group_id", "redundancy_lambda", "rationale"],
+        "properties": {
+          "group_id": { "type": "string", "minLength": 1 },
+          "redundancy_lambda": { "type": "number", "minimum": 0, "maximum": 1 },
+          "rationale": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+
+    "features": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/feature" }
+    },
+
+    "expected_profile": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["feature_id", "expected_state", "weight", "hallmark"],
+        "properties": {
+          "feature_id": { "type": "string", "minLength": 1 },
+          "expected_state": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+            ]
+          },
+          "weight": { "type": "number", "exclusiveMinimum": 0 },
+          "hallmark": { "type": "boolean" }
+        }
+      }
+    },
+
+    "red_flag_links": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^RF-[0-9]{2}$" }
+    },
+
+    "mimics": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+
+    "disposition_guidance": { "type": "string", "minLength": 1 },
+
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authors", "clinical_reviewer", "created", "last_reviewed", "review_due"],
+      "properties": {
+        "authors": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "clinical_reviewer": { "type": ["string", "null"] },
+        "created": { "type": "string", "format": "date" },
+        "last_reviewed": { "type": ["string", "null"], "format": "date" },
+        "review_due": { "type": ["string", "null"], "format": "date" }
+      }
+    }
+  },
+
+  "definitions": {
+    "verificationStatus": {
+      "type": "string",
+      "enum": ["unverified", "clinician_verified", "locally_calibrated"]
+    },
+    "tier": {
+      "type": "string",
+      "enum": ["HISTORY", "BEDSIDE", "NEAR_BEDSIDE", "IMAGING"]
+    },
+    "invasiveness": {
+      "type": "string",
+      "enum": ["NONE", "MINOR", "SIGNIFICANT"]
+    },
+    "derivedFrom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sensitivity", "specificity", "n", "prevalence_in_study"],
+      "properties": {
+        "sensitivity": { "type": "number", "minimum": 0, "maximum": 1 },
+        "specificity": { "type": "number", "minimum": 0, "maximum": 1 },
+        "n": { "type": "integer", "exclusiveMinimum": 0 },
+        "prevalence_in_study": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "featureState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "lr", "citation_id"],
+      "properties": {
+        "value": { "type": "string", "minLength": 1 },
+        "lr": { "type": "number", "exclusiveMinimum": 0 },
+        "derived_from": { "$ref": "#/definitions/derivedFrom" },
+        "citation_id": { "type": ["string", "null"] }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "lr": { "not": { "enum": [1] } } } },
+          "then": { "properties": { "citation_id": { "type": "string", "minLength": 1 } } }
+        }
+      ]
+    },
+    "feature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "feature_id", "tier", "dependency_group", "acquisition_cost",
+        "prerequisite", "invasiveness", "turnaround_minutes", "states", "verification_status"
+      ],
+      "properties": {
+        "feature_id": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+        "tier": { "$ref": "#/definitions/tier" },
+        "dependency_group": { "type": ["string", "null"] },
+        "acquisition_cost": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "prerequisite": { "type": ["string", "null"] },
+        "invasiveness": { "$ref": "#/definitions/invasiveness" },
+        "turnaround_minutes": { "type": "integer", "minimum": 0 },
+        "verification_status": { "$ref": "#/definitions/verificationStatus" },
+        "states": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/definitions/featureState" }
+        }
+      }
+    }
+  }
+}

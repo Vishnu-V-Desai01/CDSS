@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cds-cv.local/schema/citations.schema.json",
+  "title": "CitationsFile",
+  "description": "Pack-level citations.yaml. Keys are citation_id, referenced by feature states and priors. Per spec §1.7.",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "type", "title", "authors", "year", "evidence_grade",
+      "table_or_figure", "extracted_by", "extracted_on", "checked_by"
+    ],
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": ["PRIMARY_STUDY", "SYSTEMATIC_REVIEW", "GUIDELINE", "EXPERT_CONSENSUS", "LOCAL_AUDIT"]
+      },
+      "title": { "type": "string", "minLength": 1 },
+      "authors": { "type": "string", "minLength": 1 },
+      "year": { "type": "integer", "minimum": 1900, "maximum": 2100 },
+      "doi": { "type": "string" },
+      "pmid": { "type": "string" },
+      "evidence_grade": { "type": "string", "enum": ["A", "B", "C", "D"] },
+      "table_or_figure": { "type": "string", "minLength": 1 },
+      "extracted_by": { "type": "string", "minLength": 1 },
+      "extracted_on": { "type": "string", "format": "date" },
+      "checked_by": { "type": ["string", "null"] },
+      "notes": { "type": "string" }
+    }
+  }
+}
