@@ -1,0 +1,27 @@
+{
+  "name": "@cds/api",
+  "version": "1.0.0",
+  "description": "Fastify API wrapping the reasoning engine and safety gate",
+  "type": "module",
+  "main": "./dist/server.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@cds/shared-types": "file:../shared-types",
+    "@cds/engine": "file:../engine",
+    "@cds/safety-gate": "file:../safety-gate",
+    "@cds/session-store": "file:../session-store",
+    "@fastify/cors": "^8.5.0",
+    "fastify": "^4.28.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5",
+    "tsx": "^4.16.2",
+    "@types/node": "^22.5.0"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "red_flags": [
+    {
+      "flag_id": "HAEMODYNAMIC_COLLAPSE",
+      "display_name": "Haemodynamic Collapse",
+      "clinical_rationale": "Systolic BP <90 mmHg with severe tachycardia (HR >130) indicates cardiogenic shock or massive PE requiring immediate resuscitation over diagnostic workup. Present in all four conditions at their most severe. Source: McCullough 2002 (CHF), Kline 2008 PERC rule (PE).",
+      "triggers": [
+        {
+          "finding_id": "SBP_SYSTOLIC",
+          "required_state": "HYPOTENSIVE",
+          "description": "Systolic BP < 90 mmHg"
+        },
+        {
+          "finding_id": "HEART_RATE",
+          "required_state": "SEVERE_TACHYCARDIA",
+          "description": "Heart rate > 130 bpm"
+        }
+      ],
+      "trigger_logic": "ALL",
+      "halt_message": "⚠ HAEMODYNAMIC COLLAPSE detected. Differential diagnosis deferred. Immediate interventions required: IV fluid resuscitation, vasopressor support, urgent cardiology consultation.",
+      "confidence": "CERTAIN"
+    },
+    {
+      "flag_id": "MASSIVE_PE",
+      "display_name": "Massive Pulmonary Embolism",
+      "clinical_rationale": "Syncope (indicating acute RV strain/reduced cardiac output) combined with hypoxia (SpO2 <88%) and tachycardia defines massive PE per Kline 2008 and Geneva score criteria. Requires emergency thrombectomy or thrombolysis, not diagnostic workup. Source: Kline 2008, Klok 2008 (Geneva score).",
+      "triggers": [
+        {
+          "finding_id": "SYNCOPE",
+          "required_state": "PRESENT",
+          "description": "Loss of consciousness"
+        },
+        {
+          "finding_id": "OXYGEN_SATURATION",
+          "required_state": "SEVERE_HYPOXIA",
+          "description": "SpO2 < 88%"
+        },
+        {
+          "finding_id": "HEART_RATE",
+          "required_state": "SEVERE_TACHYCARDIA",
+          "description": "Heart rate > 130 bpm"
+        }
+      ],
+      "trigger_logic": "ALL",
+      "halt_message": "⚠ MASSIVE PE suspected (syncope + severe hypoxia + tachycardia). Differential diagnosis deferred. Activate emergency thrombectomy/thrombolysis protocol; urgent CT angiography and interventional cardiology.",
+      "confidence": "CERTAIN"
+    },
+    {
+      "flag_id": "ACUTE_CORONARY_SYNDROME_ACTIVE",
+      "display_name": "Acute Coronary Syndrome with Active Ischaemia",
+      "clinical_rationale": "ST elevation on ECG or ongoing severe chest pain with positive troponin indicates acute myocardial infarction requiring emergency reperfusion (PCI/thrombolysis), not diagnostic workup for UA/stable conditions. Overlaps with UA scope but demands immediate intervention. Source: Bruyninckx 2008 (UA/ACS definition).",
+      "triggers": [
+        {
+          "finding_id": "ECG_ST_ELEVATION",
+          "required_state": "PRESENT",
+          "description": "ST elevation ≥1 mm in contiguous leads"
+        }
+      ],
+      "trigger_logic": "ANY",
+      "halt_message": "⚠ ACUTE ST-ELEVATION MI detected. Differential diagnosis deferred. Activate STEMI protocol: emergency ECG, troponin, urgent cardiology, reperfusion therapy (PCI or thrombolysis).",
+      "confidence": "CERTAIN"
+    },
+    {
+      "flag_id": "ACUTE_PULMONARY_OEDEMA_RESPIRATORY_FAILURE",
+      "display_name": "Acute Decompensated Heart Failure with Pulmonary Oedema",
+      "clinical_rationale": "Acute pulmonary oedema (orthopnoea, crackles, hypoxia <88%) indicates end-organ hypoperfusion and respiratory failure. Diagnosis is clear; immediate diuresis, oxygen, and haemodynamic support take priority over differential workup. Source: McCullough 2002 (Breathing Not Properly; N=1538 ED dyspnoea cohort).",
+      "triggers": [
+        {
+          "finding_id": "ORTHOPNOEA",
+          "required_state": "PRESENT",
+          "description": "Breathlessness when lying flat"
+        },
+        {
+          "finding_id": "PULMONARY_CRACKLES",
+          "required_state": "PRESENT",
+          "description": "Bibasal crackles on auscultation"
+        },
+        {
+          "finding_id": "OXYGEN_SATURATION",
+          "required_state": "SEVERE_HYPOXIA",
+          "description": "SpO2 < 88%"
+        }
+      ],
+      "trigger_logic": "ALL",
+      "halt_message": "⚠ ACUTE DECOMPENSATED HEART FAILURE with pulmonary oedema detected. Differential diagnosis deferred. Immediate interventions: high-flow oxygen, IV diuretics, non-invasive ventilation if needed, urgent cardiology.",
+      "confidence": "CERTAIN"
+    },
+    {
+      "flag_id": "PERICARDIAL_TAMPONADE",
+      "display_name": "Pericardial Tamponade",
+      "clinical_rationale": "Beck's triad (hypotension + elevated JVP + muffled heart sounds) or pulsus paradoxus >10 mmHg indicates cardiac tamponade. This is a surgical emergency requiring pericardiocentesis before any diagnostic workup. Source: AFP 2024 (Acute Pericarditis guideline review); tamponade is a known Pericarditis complication.",
+      "triggers": [
+        {
+          "finding_id": "SBP_SYSTOLIC",
+          "required_state": "HYPOTENSIVE",
+          "description": "Systolic BP < 90 mmHg"
+        },
+        {
+          "finding_id": "JUGULAR_VENOUS_PRESSURE",
+          "required_state": "ELEVATED",
+          "description": "JVP elevation >4 cm H₂O"
+        },
+        {
+          "finding_id": "HEART_SOUNDS_MUFFLED",
+          "required_state": "PRESENT",
+          "description": "Muffled heart sounds on auscultation"
+        }
+      ],
+      "trigger_logic": "ALL",
+      "halt_message": "⚠ PERICARDIAL TAMPONADE (Beck's triad) suspected. Differential diagnosis deferred. Emergency bedside echocardiography, prepare for urgent pericardiocentesis; cardiothoracic surgery consultation.",
+      "confidence": "CERTAIN"
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "metadata": {
+    "careSetting": "ED_UNDIFFERENTIATED_CHEST_PAIN",
+    "patientAge": 60,
+    "patientSex": "MALE",
+    "patientPregnancy": "PREGNANT",
+    "sessionId": "3abc91d0-8fd4-43e6-9a8c-de885012963d",
+    "createdAt": "2026-10-06T04:33:03.571Z"
+  },
+  "halted": false,
+  "haltReason": null,
+  "haltRule": null,
+  "halt": null,
+  "turn": 0,
+  "evidenceLog": [],
+  "answeredEvidence": [],
+  "minimumSafetySet": {
+    "complete": false,
+    "missing": [
+      "VS_HEART_RATE",
+      "VS_RESP_RATE",
+      "VS_SBP",
+      "VS_DBP",
+      "VS_SPO2_ROOM_AIR",
+      "VS_TEMPERATURE",
+      "EX_MENTAL_STATUS"
+    ]
+  },
+  "distribution": null,
+  "lastMovement": null,
+  "lastGateResult": {
+    "status": "PROCEED",
+    "firedRules": [],
+    "unevaluableRules": [
+      {
+        "ruleId": "RF-01",
+        "missingFeatures": [
+          "SYSTOLIC_BLOOD_PRESSURE_CATEGORY",
+          "HEART_RATE_CATEGORY"
+        ]
+      },
+      {
+        "ruleId": "RF-02",
+        "missingFeatures": [
+          "SYNCOPE",
+          "OXYGEN_SATURATION_CATEGORY",
+          "HEART_RATE_CATEGORY"
+        ]
+      },
+      {
+        "ruleId": "RF-03",
+        "missingFeatures": [
+          "ECG_ST_ELEVATION"
+        ]
+      },
+      {
+        "ruleId": "RF-04",
+        "missingFeatures": [
+          "ORTHOPNEA",
+          "PULMONARY_RALES",
+          "OXYGEN_SATURATION_CATEGORY"
+        ]
+      },
+      {
+        "ruleId": "RF-05",
+        "missingFeatures": [
+          "SYSTOLIC_BLOOD_PRESSURE_CATEGORY",
+          "JVD",
+          "MUFFLED_HEART_SOUNDS"
+        ]
+      }
+    ],
+    "primaryRule": null
+  },
+  "redFlagChecks": [
+    {
+      "ruleId": "RF-01",
+      "displayName": "Haemodynamic Collapse",
+      "missingFindings": [
+        {
+          "featureId": "SYSTOLIC_BLOOD_PRESSURE_CATEGORY",
+          "prompt": "Systolic blood pressure category",
+          "stateValues": [
+            "HYPOTENSIVE",
+            "NORMAL",
+            "HYPERTENSIVE"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": false
+        },
+        {
+          "featureId": "HEART_RATE_CATEGORY",
+          "prompt": "Heart rate category",
+          "stateValues": [
+            "BRADYCARDIA",
+            "NORMAL",
+            "TACHYCARDIA",
+            "SEVERE_TACHYCARDIA"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": false
+        }
+      ]
+    },
+    {
+      "ruleId": "RF-02",
+      "displayName": "Massive PE Suspected",
+      "missingFindings": [
+        {
+          "featureId": "SYNCOPE",
+          "prompt": "Has the patient had a syncopal episode with this presentation?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "HISTORY",
+          "answerable": true
+        },
+        {
+          "featureId": "OXYGEN_SATURATION_CATEGORY",
+          "prompt": "Oxygen saturation category",
+          "stateValues": [
+            "SEVERE_HYPOXIA",
+            "MILD_HYPOXIA",
+            "NORMAL"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": false
+        },
+        {
+          "featureId": "HEART_RATE_CATEGORY",
+          "prompt": "Heart rate category",
+          "stateValues": [
+            "BRADYCARDIA",
+            "NORMAL",
+            "TACHYCARDIA",
+            "SEVERE_TACHYCARDIA"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": false
+        }
+      ]
+    },
+    {
+      "ruleId": "RF-03",
+      "displayName": "Acute ST-Elevation MI",
+      "missingFindings": [
+        {
+          "featureId": "ECG_ST_ELEVATION",
+          "prompt": "ST elevation ≥1mm in contiguous leads on ECG?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": true
+        }
+      ]
+    },
+    {
+      "ruleId": "RF-04",
+      "displayName": "Acute Pulmonary Oedema with Respiratory Failure",
+      "missingFindings": [
+        {
+          "featureId": "ORTHOPNEA",
+          "prompt": "Does the patient experience orthopnea (shortness of breath when lying flat)?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "HISTORY",
+          "answerable": true
+        },
+        {
+          "featureId": "PULMONARY_RALES",
+          "prompt": "Pulmonary rales on auscultation?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": true
+        },
+        {
+          "featureId": "OXYGEN_SATURATION_CATEGORY",
+          "prompt": "Oxygen saturation category",
+          "stateValues": [
+            "SEVERE_HYPOXIA",
+            "MILD_HYPOXIA",
+            "NORMAL"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": false
+        }
+      ]
+    },
+    {
+      "ruleId": "RF-05",
+      "displayName": "Pericardial Tamponade",
+      "missingFindings": [
+        {
+          "featureId": "SYSTOLIC_BLOOD_PRESSURE_CATEGORY",
+          "prompt": "Systolic blood pressure category",
+          "stateValues": [
+            "HYPOTENSIVE",
+            "NORMAL",
+            "HYPERTENSIVE"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": false
+        },
+        {
+          "featureId": "JVD",
+          "prompt": "Is jugular venous distension present?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": true
+        },
+        {
+          "featureId": "MUFFLED_HEART_SOUNDS",
+          "prompt": "Muffled or distant heart sounds on auscultation?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": true
+        }
+      ]
+    }
+  ],
+  "nextQuestion": null,
+  "deferredFeatureIds": [],
+  "pending": [],
+  "trace": []
+}

@@ -1,6 +1,6 @@
 schema_version: "1.0.0"
 condition_id: PULMONARY_EMBOLISM
-display_name: "Pulmonary embolism"
+display_name: "Pulmonary Embolism"
 class: CANDIDATE
 visibility: REPORTED
 enabled: true
@@ -8,161 +8,279 @@ verification_status: unverified
 
 priors:
   ED_UNDIFFERENTIATED_CHEST_PAIN:
-    weight: 0.040
-    citation_id: CIT-PE-PRIOR-01
-    population: "Adults, ED, non-traumatic chest pain and/or dyspnoea"
-    verification_status: unverified
-  PRIMARY_CARE_CHEST_PAIN:
-    weight: 0.005
-    citation_id: CIT-PE-PRIOR-02
-    population: "Adults, general practice, chest pain presenting complaint"
+    weight: 0.069
+    citation_id: KLINE_2008
+    population: >
+      Suspected-PE ED cohort, N=8138, 13 US/NZ sites (Kline 2008). NOT a fully
+      undifferentiated chest-pain/dyspnea population — patients were already
+      selected for PE workup. Closest available match to this care-setting
+      category. See EXTRACTION_NOTES.md, "Denominator problem."
     verification_status: unverified
 
 dependency_groups:
-  - group_id: DVT_SIGNS
-    redundancy_lambda: 0.35
-    rationale: "Leg swelling and calf tenderness co-occur; placeholder group with one member pending more DVT-sign features."
-  - group_id: OXYGENATION
-    redundancy_lambda: 0.40
-    rationale: "SpO2 is physiologically coupled to respiratory rate and dyspnoea (not yet modelled in this trimmed file)."
+  - group_id: CLINICAL_PRETEST_SCORES
+    redundancy_lambda: 0.15
+    rationale: >
+      PERC, Wells (both forms), Revised Geneva, and Simplified Geneva draw on
+      substantially overlapping clinical variables (heart rate, immobilization/
+      surgery, prior VTE, leg findings, hormone use). Not independent evidence —
+      heavy discount reflects near-total informational overlap. Structural
+      judgment call, not literature-derived; pending clinical lead review.
 
 features:
-  - feature_id: HX_PREVIOUS_VTE
-    tier: HISTORY
-    dependency_group: null
-    acquisition_cost: 1
-    prerequisite: null
-    invasiveness: NONE
-    turnaround_minutes: 1
-    verification_status: unverified
-    states:
-      - value: PRESENT
-        lr: 2.33
-        derived_from: {sensitivity: 0.35, specificity: 0.85, n: 1121, prevalence_in_study: 0.23}
-        citation_id: CIT-PE-VTE-01
-      - value: ABSENT
-        lr: 0.76
-        derived_from: {sensitivity: 0.35, specificity: 0.85, n: 1121, prevalence_in_study: 0.23}
-        citation_id: CIT-PE-VTE-01
-      - value: INDETERMINATE
-        lr: 1.00
-        citation_id: null
-
-  - feature_id: VS_SPO2_ROOM_AIR
+  - feature_id: PERC_RULE
     tier: BEDSIDE
-    dependency_group: OXYGENATION
+    dependency_group: CLINICAL_PRETEST_SCORES
     acquisition_cost: 1
     prerequisite: null
     invasiveness: NONE
-    turnaround_minutes: 1
+    turnaround_minutes: 5
     verification_status: unverified
     states:
-      - value: GTE_95
-        lr: 0.60
-        citation_id: CIT-PE-VS-02
-      - value: 90_TO_94
-        lr: 2.10
-        citation_id: CIT-PE-VS-02
-      - value: LT_90
-        lr: 3.00
-        citation_id: CIT-PE-VS-02
-      - value: INDETERMINATE
-        lr: 1.00
-        citation_id: null
+      - value: NEGATIVE
+        lr: 0.17
+        derived_from:
+          sensitivity: 0.043
+          specificity: 0.746
+          n: 8138
+          prevalence_in_study: 0.069
+        citation_id: KLINE_2008
+      - value: POSITIVE
+        lr: 1.28
+        derived_from:
+          sensitivity: 0.957
+          specificity: 0.254
+          n: 8138
+          prevalence_in_study: 0.069
+        citation_id: KLINE_2008
 
-  - feature_id: VS_HEART_RATE
+  - feature_id: WELLS_SCORE_CATEGORY
     tier: BEDSIDE
-    dependency_group: null
+    dependency_group: CLINICAL_PRETEST_SCORES
     acquisition_cost: 1
     prerequisite: null
     invasiveness: NONE
-    turnaround_minutes: 1
+    turnaround_minutes: 5
     verification_status: unverified
     states:
-      - value: LT_60
-        lr: 0.60
-        citation_id: CIT-PE-VS-01
-      - value: 60_TO_99
-        lr: 0.70
-        citation_id: CIT-PE-VS-01
-      - value: 100_TO_119
-        lr: 1.80
-        citation_id: CIT-PE-VS-01
-      - value: GTE_120
-        lr: 2.40
-        citation_id: CIT-PE-VS-01
-      - value: INDETERMINATE
-        lr: 1.00
-        citation_id: null
+      - value: LOW
+        lr: 0.39
+        derived_from:
+          sensitivity: 0.2802
+          specificity: 0.2825
+          n: 922
+          prevalence_in_study: 0.2245
+        citation_id: RIGHINI_2006
+      - value: INTERMEDIATE
+        lr: 2.27
+        derived_from:
+          sensitivity: 0.6232
+          specificity: 0.7259
+          n: 922
+          prevalence_in_study: 0.2245
+        citation_id: RIGHINI_2006
+      - value: HIGH
+        lr: 11.52
+        derived_from:
+          sensitivity: 0.0966
+          specificity: 0.9916
+          n: 922
+          prevalence_in_study: 0.2245
+        citation_id: RIGHINI_2006
 
-  - feature_id: EX_UNILATERAL_LEG_SWELLING
+  - feature_id: WELLS_DICHOTOMIZED
     tier: BEDSIDE
-    dependency_group: DVT_SIGNS
+    dependency_group: CLINICAL_PRETEST_SCORES
     acquisition_cost: 1
     prerequisite: null
     invasiveness: NONE
-    turnaround_minutes: 2
+    turnaround_minutes: 5
     verification_status: unverified
     states:
-      - value: PRESENT
-        lr: 2.50
-        derived_from: {sensitivity: 0.30, specificity: 0.88, n: 1121, prevalence_in_study: 0.23}
-        citation_id: CIT-PE-WELLS-03
-      - value: ABSENT
-        lr: 0.80
-        derived_from: {sensitivity: 0.30, specificity: 0.88, n: 1121, prevalence_in_study: 0.23}
-        citation_id: CIT-PE-WELLS-03
-      - value: INDETERMINATE
-        lr: 1.00
-        citation_id: null
+      - value: PE_UNLIKELY
+        lr: 0.52
+        derived_from:
+          sensitivity: 0.4589
+          specificity: 0.1231
+          n: 922
+          prevalence_in_study: 0.2245
+        citation_id: RIGHINI_2006
+      - value: PE_LIKELY
+        lr: 4.40
+        derived_from:
+          sensitivity: 0.5411
+          specificity: 0.8769
+          n: 922
+          prevalence_in_study: 0.2245
+        citation_id: RIGHINI_2006
 
-  - feature_id: LAB_DDIMER_HIGHSENS
+  - feature_id: REVISED_GENEVA_SCORE_CATEGORY
+    tier: BEDSIDE
+    dependency_group: CLINICAL_PRETEST_SCORES
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 5
+    verification_status: unverified
+    states:
+      - value: LOW
+        lr: 0.46
+        derived_from:
+          sensitivity: 0.2653
+          specificity: 0.4263
+          n: 300
+          prevalence_in_study: 0.1633
+        citation_id: KLOK_2008
+      - value: INTERMEDIATE
+        lr: 1.51
+        derived_from:
+          sensitivity: 0.6327
+          specificity: 0.5817
+          n: 300
+          prevalence_in_study: 0.1633
+        citation_id: KLOK_2008
+      - value: HIGH
+        lr: 12.80
+        derived_from:
+          sensitivity: 0.1020
+          specificity: 0.9920
+          n: 300
+          prevalence_in_study: 0.1633
+        citation_id: KLOK_2008
+
+  - feature_id: SIMPLIFIED_GENEVA_SCORE_CATEGORY
+    tier: BEDSIDE
+    dependency_group: CLINICAL_PRETEST_SCORES
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 5
+    verification_status: unverified
+    states:
+      - value: LOW
+        lr: 0.49
+        derived_from:
+          sensitivity: 0.2007
+          specificity: 0.5863
+          n: 1621
+          prevalence_in_study: 0.1814
+        citation_id: ROBERTEBADI_2017
+      - value: INTERMEDIATE
+        lr: 1.31
+        derived_from:
+          sensitivity: 0.7483
+          specificity: 0.4273
+          n: 1621
+          prevalence_in_study: 0.1814
+        citation_id: ROBERTEBADI_2017
+      - value: HIGH
+        lr: 3.76
+        derived_from:
+          sensitivity: 0.0510
+          specificity: 0.9864
+          n: 1621
+          prevalence_in_study: 0.1814
+        citation_id: ROBERTEBADI_2017
+
+  - feature_id: D_DIMER_ELFA
     tier: NEAR_BEDSIDE
     dependency_group: null
-    acquisition_cost: 5
+    acquisition_cost: 2
     prerequisite: null
     invasiveness: MINOR
-    turnaround_minutes: 45
+    turnaround_minutes: 30
     verification_status: unverified
     states:
-      - value: POSITIVE
+      - value: ELEVATED
         lr: 1.70
-        citation_id: CIT-PE-DDIMER-01
+        derived_from:
+          sensitivity: 0.97
+          specificity: 0.43
+          n: 20
+          prevalence_in_study: 0.27
+        citation_id: DINISIO_2007
       - value: NEGATIVE
-        lr: 0.09
-        citation_id: CIT-PE-DDIMER-01
-      - value: INDETERMINATE
-        lr: 1.00
-        citation_id: null
+        lr: 0.07
+        derived_from:
+          sensitivity: 0.03
+          specificity: 0.57
+          n: 20
+          prevalence_in_study: 0.27
+        citation_id: DINISIO_2007
 
-expected_profile:
-  - feature_id: VS_SPO2_ROOM_AIR
-    expected_state: ["90_TO_94", "LT_90"]
-    weight: 3
-    hallmark: false
-  - feature_id: VS_HEART_RATE
-    expected_state: ["100_TO_119", "GTE_120"]
-    weight: 2
-    hallmark: false
-  - feature_id: EX_UNILATERAL_LEG_SWELLING
-    expected_state: "PRESENT"
-    weight: 2
-    hallmark: false
-  - feature_id: LAB_DDIMER_HIGHSENS
-    expected_state: "POSITIVE"
-    weight: 4
-    hallmark: true
+  - feature_id: D_DIMER_MICROPLATE_ELISA
+    tier: NEAR_BEDSIDE
+    dependency_group: null
+    acquisition_cost: 2
+    prerequisite: null
+    invasiveness: MINOR
+    turnaround_minutes: 30
+    verification_status: unverified
+    states:
+      - value: ELEVATED
+        lr: 1.90
+        derived_from:
+          sensitivity: 0.95
+          specificity: 0.50
+          n: 15
+          prevalence_in_study: 0.28
+        citation_id: DINISIO_2007
+      - value: NEGATIVE
+        lr: 0.10
+        derived_from:
+          sensitivity: 0.05
+          specificity: 0.50
+          n: 15
+          prevalence_in_study: 0.28
+        citation_id: DINISIO_2007
 
-red_flag_links: ["RF-01", "RF-05", "RF-06", "RF-07", "RF-09", "RF-12"]
-mimics: ["ACUTE_PERICARDITIS", "SHADOW_ANXIETY_PANIC", "SHADOW_DANGEROUS_OOS"]
+  - feature_id: D_DIMER_LATEX_QUANTITATIVE
+    tier: NEAR_BEDSIDE
+    dependency_group: null
+    acquisition_cost: 2
+    prerequisite: null
+    invasiveness: MINOR
+    turnaround_minutes: 30
+    verification_status: unverified
+    states:
+      - value: ELEVATED
+        lr: 1.90
+        derived_from:
+          sensitivity: 0.95
+          specificity: 0.50
+          n: 23
+          prevalence_in_study: 0.29
+        citation_id: DINISIO_2007
+      - value: NEGATIVE
+        lr: 0.10
+        derived_from:
+          sensitivity: 0.05
+          specificity: 0.50
+          n: 23
+          prevalence_in_study: 0.29
+        citation_id: DINISIO_2007
+
+expected_profile: []
+red_flag_links: []
+mimics:
+  - UNSTABLE_ANGINA
+  - ACUTE_PERICARDITIS
+  - CONGESTIVE_HEART_FAILURE
+  - SHADOW_ANXIETY_PANIC
+  - SHADOW_MUSCULOSKELETAL
+
 disposition_guidance: >
-  PE cannot be excluded by clinical features alone. Where probability is
-  non-trivial, formal risk stratification and definitive imaging pathways
-  apply. This engine does not implement or substitute for those pathways.
+  PROVISIONAL — pending clinical lead review, not yet literature-endorsed as
+  written. Elevated pretest-probability score and/or positive D-dimer should
+  prompt confirmatory imaging (CTPA) per institutional protocol. Hemodynamically
+  unstable presentations bypass stepwise workup via the red-flag gate
+  (red-flags.json — not yet built, separate Chat 1 deliverable).
 
 provenance:
-  authors: ["chat0"]
+  authors:
+    - "Vishnu — Chat 1 Evidence Sourcing lead"
+    - "Claude — AI-assisted extraction, pending clinical verification"
   clinical_reviewer: null
-  created: "2026-08-07"
+  created: "2026-08-08"
   last_reviewed: null
   review_due: null

@@ -2,7 +2,13 @@ import { createHash } from "node:crypto";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { loadPack } from "./loadPack.js";
-import { validateCondition, validateCitations, validateFeaturesRegistry, formatAjvErrors } from "./validators.js";
+import {
+  validateCondition,
+  validateCitations,
+  validateFeaturesRegistry,
+  validateRedFlags,
+  formatAjvErrors,
+} from "./validators.js";
 import { runAllCrossChecks } from "./crossChecks.js";
 
 export interface ValidateOptions {
@@ -35,6 +41,9 @@ export function validatePack(packDir: string, opts: ValidateOptions = {}): Valid
   if (!validateFeaturesRegistry(pack.featuresRegistry.data)) {
     errors.push(...formatAjvErrors(validateFeaturesRegistry.errors, pack.featuresRegistry.path));
   }
+  if (!validateRedFlags(pack.redFlags.data)) {
+    errors.push(...formatAjvErrors(validateRedFlags.errors, pack.redFlags.path));
+  }
 
   // Cross-checks assume schema-valid input; skip them if schema already failed
   // to avoid a wall of derived noise on top of the root cause.
@@ -44,7 +53,7 @@ export function validatePack(packDir: string, opts: ValidateOptions = {}): Valid
     warnings.push(...crossCheck.warnings);
   }
 
-  // Nine-hypothesis completeness check (spec §5.2 / §6 acceptance checklist).
+  // Nine-hypothesis completeness check (spec sec. 5.2 / sec. 6 acceptance checklist).
   if (errors.length === 0) {
     const expectedIds = [
       "PULMONARY_EMBOLISM", "UNSTABLE_ANGINA", "CONGESTIVE_HEART_FAILURE", "ACUTE_PERICARDITIS",
@@ -53,7 +62,50 @@ export function validatePack(packDir: string, opts: ValidateOptions = {}): Valid
     const present = new Set(pack.conditions.map((f) => f.data.condition_id));
     const missing = expectedIds.filter((id) => !present.has(id as never));
     if (missing.length > 0) {
-      warnings.push(`Pack is missing hypotheses: ${missing.join(", ")} (expected all nine, per spec §5.2).`);
+      warnings.push(`Pack is missing hypotheses: ${missing.join(", ")} (expected all nine, per spec sec. 5.2).`);
+    }
+  }
+
+  // Red-flag referential integrity (spec sec. 4.3): every trigger's finding_id
+  // must exist in the feature registry, every required_state must be one of
+  // that feature's registered state_values, and every red_flag_link in a
+  // condition file must point to a flag_id that actually exists.
+  if (errors.length === 0) {
+    const registryIds = new Set(Object.keys(pack.featuresRegistry.data));
+    const flagIds = new Set(Object.keys(pack.redFlags.data));
+
+    for (const [key, rule] of Object.entries(pack.redFlags.data)) {
+      if (rule.flag_id !== key) {
+        errors.push(
+          `${pack.redFlags.path}: entry "${key}" has flag_id "${rule.flag_id}" - key and flag_id must match.`,
+        );
+      }
+      for (const trigger of rule.triggers) {
+        if (!registryIds.has(trigger.finding_id)) {
+          errors.push(
+            `${pack.redFlags.path}: ${key} references unknown finding_id "${trigger.finding_id}" (not in features.registry.yaml).`,
+          );
+          continue;
+        }
+        const registryEntry = pack.featuresRegistry.data[trigger.finding_id];
+        if (registryEntry && !registryEntry.state_values.includes(trigger.required_state)) {
+          errors.push(
+            `${pack.redFlags.path}: ${key} trigger on "${trigger.finding_id}" requires state ` +
+              `"${trigger.required_state}", not among registered state_values ` +
+              `[${registryEntry.state_values.join(", ")}].`,
+          );
+        }
+      }
+    }
+
+    for (const file of pack.conditions) {
+      for (const linkedFlag of file.data.red_flag_links ?? []) {
+        if (!flagIds.has(linkedFlag)) {
+          errors.push(
+            `${file.path}: red_flag_links references unknown flag_id "${linkedFlag}" (not defined in red-flags.yaml).`,
+          );
+        }
+      }
     }
   }
 
@@ -87,6 +139,10 @@ export function buildPack(packDir: string, outDir: string, packVersion: string, 
     knowledge_pack_version: packVersion,
     conditions: Object.fromEntries(pack.conditions.map((f) => [f.data.condition_id, f.data])),
     citations: pack.citations.data,
+    red_flags: pack.redFlags.data,
+    // Question wording and answer options. The client renders these as
+    // served and must never rebuild them itself. Included in the hash.
+    features_registry: pack.featuresRegistry.data,
   };
 
   const canonical = canonicalStringify(compiled);

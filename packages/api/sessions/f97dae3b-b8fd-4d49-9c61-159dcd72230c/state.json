@@ -1,0 +1,550 @@
+{
+  "metadata": {
+    "careSetting": "ED_UNDIFFERENTIATED_CHEST_PAIN",
+    "patientAge": 60,
+    "patientSex": "FEMALE",
+    "patientPregnancy": "UNKNOWN",
+    "sessionId": "f97dae3b-b8fd-4d49-9c61-159dcd72230c",
+    "createdAt": "2026-10-06T04:24:49.613Z"
+  },
+  "halted": false,
+  "haltReason": null,
+  "haltRule": null,
+  "halt": null,
+  "turn": 8,
+  "evidenceLog": [
+    {
+      "id": "d969e105-fe3a-46fa-bcae-2ef5bc239392",
+      "featureId": "VS_HEART_RATE",
+      "value": "145",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:26:34.503Z",
+      "observerConfidence": "HIGH",
+      "turn": 1,
+      "rawValue": 145
+    },
+    {
+      "id": "f4f825d2-1d58-4fef-afc8-cde9f80262ef",
+      "featureId": "VS_RESP_RATE",
+      "value": "18",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:26:34.534Z",
+      "observerConfidence": "HIGH",
+      "turn": 2,
+      "rawValue": 18
+    },
+    {
+      "id": "b4b36c41-9b64-4484-b68c-e3a0087012e5",
+      "featureId": "VS_SBP",
+      "value": "84",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:26:34.557Z",
+      "observerConfidence": "HIGH",
+      "turn": 3,
+      "rawValue": 84
+    },
+    {
+      "id": "03bde097-7706-4cef-a8a1-631d19b10fe7",
+      "featureId": "VS_SBP",
+      "value": "128",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:27:09.311Z",
+      "observerConfidence": "HIGH",
+      "turn": 4,
+      "corrects": "b4b36c41-9b64-4484-b68c-e3a0087012e5",
+      "rawValue": 128
+    },
+    {
+      "id": "0cf2823a-596a-43a3-9370-9ca4c556b2a9",
+      "featureId": "VS_DBP",
+      "value": "50",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:27:36.329Z",
+      "observerConfidence": "HIGH",
+      "turn": 5,
+      "rawValue": 50
+    },
+    {
+      "id": "8d3e3881-1b82-4c85-9137-80046f28a279",
+      "featureId": "VS_SPO2_ROOM_AIR",
+      "value": "97",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:27:36.347Z",
+      "observerConfidence": "HIGH",
+      "turn": 6,
+      "rawValue": 97
+    },
+    {
+      "id": "5d06db03-f1c5-443a-bee9-1349d9c6b99e",
+      "featureId": "VS_TEMPERATURE",
+      "value": "36",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:27:36.362Z",
+      "observerConfidence": "HIGH",
+      "turn": 7,
+      "rawValue": 36
+    },
+    {
+      "id": "26b31eb2-2dc4-411a-b317-5890009a5c67",
+      "featureId": "EX_MENTAL_STATUS",
+      "value": "ALERT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T04:27:36.398Z",
+      "observerConfidence": "HIGH",
+      "turn": 8
+    }
+  ],
+  "answeredEvidence": [
+    {
+      "evidenceId": "d969e105-fe3a-46fa-bcae-2ef5bc239392",
+      "featureId": "VS_HEART_RATE",
+      "value": "145",
+      "rawValue": 145,
+      "turn": 1,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "f4f825d2-1d58-4fef-afc8-cde9f80262ef",
+      "featureId": "VS_RESP_RATE",
+      "value": "18",
+      "rawValue": 18,
+      "turn": 2,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "03bde097-7706-4cef-a8a1-631d19b10fe7",
+      "featureId": "VS_SBP",
+      "value": "128",
+      "rawValue": 128,
+      "turn": 4,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "0cf2823a-596a-43a3-9370-9ca4c556b2a9",
+      "featureId": "VS_DBP",
+      "value": "50",
+      "rawValue": 50,
+      "turn": 5,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "8d3e3881-1b82-4c85-9137-80046f28a279",
+      "featureId": "VS_SPO2_ROOM_AIR",
+      "value": "97",
+      "rawValue": 97,
+      "turn": 6,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "5d06db03-f1c5-443a-bee9-1349d9c6b99e",
+      "featureId": "VS_TEMPERATURE",
+      "value": "36",
+      "rawValue": 36,
+      "turn": 7,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "26b31eb2-2dc4-411a-b317-5890009a5c67",
+      "featureId": "EX_MENTAL_STATUS",
+      "value": "ALERT",
+      "rawValue": null,
+      "turn": 8,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    }
+  ],
+  "minimumSafetySet": {
+    "complete": true,
+    "missing": []
+  },
+  "distribution": {
+    "entries": [
+      {
+        "id": "UNKNOWN",
+        "probability": 0.43016638662953677
+      },
+      {
+        "id": "CONGESTIVE_HEART_FAILURE",
+        "probability": 0.3452053416823804
+      },
+      {
+        "id": "UNSTABLE_ANGINA",
+        "probability": 0.1636419246674235
+      },
+      {
+        "id": "PULMONARY_EMBOLISM",
+        "probability": 0.03747465231882742
+      },
+      {
+        "id": "ACUTE_PERICARDITIS",
+        "probability": 0.02351169470183189
+      }
+    ],
+    "scopeFit": 0.5698336133704632
+  },
+  "lastMovement": {
+    "seq": 9,
+    "turn": 8,
+    "at": "2026-10-06T04:27:36.472Z",
+    "kind": "EVIDENCE_ADDED",
+    "featureId": "EX_MENTAL_STATUS",
+    "value": "ALERT",
+    "previousValue": null,
+    "evidenceId": "26b31eb2-2dc4-411a-b317-5890009a5c67",
+    "corrects": null,
+    "before": null,
+    "after": [
+      {
+        "id": "UNKNOWN",
+        "probability": 0.43016638662953677
+      },
+      {
+        "id": "CONGESTIVE_HEART_FAILURE",
+        "probability": 0.3452053416823804
+      },
+      {
+        "id": "UNSTABLE_ANGINA",
+        "probability": 0.1636419246674235
+      },
+      {
+        "id": "PULMONARY_EMBOLISM",
+        "probability": 0.03747465231882742
+      },
+      {
+        "id": "ACUTE_PERICARDITIS",
+        "probability": 0.02351169470183189
+      }
+    ],
+    "citations": [],
+    "note": null
+  },
+  "lastGateResult": {
+    "status": "PROCEED",
+    "firedRules": [],
+    "unevaluableRules": [
+      {
+        "ruleId": "RF-02",
+        "missingFeatures": [
+          "SYNCOPE"
+        ]
+      },
+      {
+        "ruleId": "RF-03",
+        "missingFeatures": [
+          "ECG_ST_ELEVATION"
+        ]
+      },
+      {
+        "ruleId": "RF-04",
+        "missingFeatures": [
+          "ORTHOPNEA",
+          "PULMONARY_RALES"
+        ]
+      },
+      {
+        "ruleId": "RF-05",
+        "missingFeatures": [
+          "JVD",
+          "MUFFLED_HEART_SOUNDS"
+        ]
+      }
+    ],
+    "primaryRule": null
+  },
+  "redFlagChecks": [
+    {
+      "ruleId": "RF-02",
+      "displayName": "Massive PE Suspected",
+      "missingFindings": [
+        {
+          "featureId": "SYNCOPE",
+          "prompt": "Has the patient had a syncopal episode with this presentation?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "HISTORY",
+          "answerable": true
+        }
+      ]
+    },
+    {
+      "ruleId": "RF-03",
+      "displayName": "Acute ST-Elevation MI",
+      "missingFindings": [
+        {
+          "featureId": "ECG_ST_ELEVATION",
+          "prompt": "ST elevation ≥1mm in contiguous leads on ECG?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": true
+        }
+      ]
+    },
+    {
+      "ruleId": "RF-04",
+      "displayName": "Acute Pulmonary Oedema with Respiratory Failure",
+      "missingFindings": [
+        {
+          "featureId": "ORTHOPNEA",
+          "prompt": "Does the patient experience orthopnea (shortness of breath when lying flat)?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "HISTORY",
+          "answerable": true
+        },
+        {
+          "featureId": "PULMONARY_RALES",
+          "prompt": "Pulmonary rales on auscultation?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": true
+        }
+      ]
+    },
+    {
+      "ruleId": "RF-05",
+      "displayName": "Pericardial Tamponade",
+      "missingFindings": [
+        {
+          "featureId": "JVD",
+          "prompt": "Is jugular venous distension present?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": true
+        },
+        {
+          "featureId": "MUFFLED_HEART_SOUNDS",
+          "prompt": "Muffled or distant heart sounds on auscultation?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": true
+        }
+      ]
+    }
+  ],
+  "nextQuestion": {
+    "featureId": "PRIOR_CHF_HISTORY",
+    "tier": "HISTORY",
+    "cost": 1,
+    "eigBits": 0.5848349796924524,
+    "value": 0.5848349796924524,
+    "gatedOut": false,
+    "method": "EXACT_BINARY",
+    "incoherentHypotheses": [],
+    "prompt": "Prior history of congestive heart failure?",
+    "stateValues": [
+      "PRESENT",
+      "ABSENT"
+    ]
+  },
+  "deferredFeatureIds": [],
+  "pending": [],
+  "trace": [
+    {
+      "seq": 0,
+      "turn": 1,
+      "at": "2026-10-06T04:26:34.517Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_HEART_RATE",
+      "value": "145",
+      "previousValue": null,
+      "evidenceId": "d969e105-fe3a-46fa-bcae-2ef5bc239392",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 1,
+      "turn": 2,
+      "at": "2026-10-06T04:26:34.541Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_RESP_RATE",
+      "value": "18",
+      "previousValue": null,
+      "evidenceId": "f4f825d2-1d58-4fef-afc8-cde9f80262ef",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 2,
+      "turn": 3,
+      "at": "2026-10-06T04:26:34.563Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_SBP",
+      "value": "84",
+      "previousValue": null,
+      "evidenceId": "b4b36c41-9b64-4484-b68c-e3a0087012e5",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 3,
+      "turn": 3,
+      "at": "2026-10-06T04:26:34.563Z",
+      "kind": "SESSION_HALTED",
+      "featureId": null,
+      "value": null,
+      "previousValue": null,
+      "evidenceId": null,
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": "RF-01 Haemodynamic Collapse: Haemodynamic collapse detected. Differential diagnosis deferred. Initiate resuscitation: IV fluids, vasopressor support, urgent cardiology consultation."
+    },
+    {
+      "seq": 4,
+      "turn": 4,
+      "at": "2026-10-06T04:27:09.323Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "VS_SBP",
+      "value": "128",
+      "previousValue": "84",
+      "evidenceId": "03bde097-7706-4cef-a8a1-631d19b10fe7",
+      "corrects": "b4b36c41-9b64-4484-b68c-e3a0087012e5",
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 5,
+      "turn": 4,
+      "at": "2026-10-06T04:27:09.323Z",
+      "kind": "HALT_CLEARED",
+      "featureId": null,
+      "value": null,
+      "previousValue": null,
+      "evidenceId": null,
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": "Corrected evidence no longer fires any red-flag rule."
+    },
+    {
+      "seq": 6,
+      "turn": 5,
+      "at": "2026-10-06T04:27:36.336Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_DBP",
+      "value": "50",
+      "previousValue": null,
+      "evidenceId": "0cf2823a-596a-43a3-9370-9ca4c556b2a9",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 7,
+      "turn": 6,
+      "at": "2026-10-06T04:27:36.355Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_SPO2_ROOM_AIR",
+      "value": "97",
+      "previousValue": null,
+      "evidenceId": "8d3e3881-1b82-4c85-9137-80046f28a279",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 8,
+      "turn": 7,
+      "at": "2026-10-06T04:27:36.368Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_TEMPERATURE",
+      "value": "36",
+      "previousValue": null,
+      "evidenceId": "5d06db03-f1c5-443a-bee9-1349d9c6b99e",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 9,
+      "turn": 8,
+      "at": "2026-10-06T04:27:36.472Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "EX_MENTAL_STATUS",
+      "value": "ALERT",
+      "previousValue": null,
+      "evidenceId": "26b31eb2-2dc4-411a-b317-5890009a5c67",
+      "corrects": null,
+      "before": null,
+      "after": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.43016638662953677
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.3452053416823804
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.1636419246674235
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03747465231882742
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.02351169470183189
+        }
+      ],
+      "citations": [],
+      "note": null
+    }
+  ]
+}

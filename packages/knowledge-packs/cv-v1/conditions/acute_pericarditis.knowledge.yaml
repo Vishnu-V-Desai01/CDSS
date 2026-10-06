@@ -1,0 +1,150 @@
+schema_version: "1.0.0"
+condition_id: ACUTE_PERICARDITIS
+display_name: "Acute Pericarditis"
+class: CANDIDATE
+visibility: REPORTED
+enabled: true
+verification_status: unverified
+
+priors:
+  ED_UNDIFFERENTIATED_CHEST_PAIN:
+    weight: 0.044
+    citation_id: AFP_2024
+    population: >
+      Acute pericarditis accounts for ~4.4% of ED presentations with nonischemic
+      chest pain, per AFP 2024 guideline review. Used as prior for ED
+      undifferentiated chest pain population.
+    verification_status: unverified
+
+dependency_groups: []
+
+features:
+  - feature_id: CHEST_PAIN_PLEURITIC
+    tier: HISTORY
+    dependency_group: null
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 2
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 1.2
+        derived_from:
+          sensitivity: 0.90
+          specificity: 0.25
+          n: 1
+          prevalence_in_study: 0.044
+        citation_id: AFP_2024
+      - value: ABSENT
+        lr: 0.40
+        derived_from:
+          sensitivity: 0.90
+          specificity: 0.25
+          n: 1
+          prevalence_in_study: 0.044
+        citation_id: AFP_2024
+
+  - feature_id: PERICARDIAL_FRICTION_RUB
+    tier: BEDSIDE
+    dependency_group: null
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 2
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 6.5
+        derived_from:
+          sensitivity: 0.40
+          specificity: 0.94
+          n: 1
+          prevalence_in_study: 0.044
+        citation_id: AFP_2024
+      - value: ABSENT
+        lr: 0.64
+        derived_from:
+          sensitivity: 0.40
+          specificity: 0.94
+          n: 1
+          prevalence_in_study: 0.044
+        citation_id: AFP_2024
+
+  - feature_id: CHEST_PAIN_POSITIONAL_RELIEF
+    tier: HISTORY
+    dependency_group: null
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 2
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 2.2
+        derived_from:
+          sensitivity: 0.46
+          specificity: 0.79
+          n: 1
+          prevalence_in_study: 0.044
+        citation_id: AFP_2024
+      - value: ABSENT
+        lr: 0.69
+        derived_from:
+          sensitivity: 0.46
+          specificity: 0.79
+          n: 1
+          prevalence_in_study: 0.044
+        citation_id: AFP_2024
+
+  - feature_id: PERICARDIAL_IMAGING_ABNORMAL
+    tier: IMAGING
+    dependency_group: null
+    acquisition_cost: 8
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 120
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 8.1
+        derived_from:
+          sensitivity: 0.56
+          specificity: 0.93
+          n: 1
+          prevalence_in_study: 0.044
+        citation_id: AFP_2024
+      - value: ABSENT
+        lr: 0.47
+        derived_from:
+          sensitivity: 0.56
+          specificity: 0.93
+          n: 1
+          prevalence_in_study: 0.044
+        citation_id: AFP_2024
+
+expected_profile: []
+red_flag_links: []
+mimics:
+  - PULMONARY_EMBOLISM
+  - UNSTABLE_ANGINA
+  - CONGESTIVE_HEART_FAILURE
+  - SHADOW_MUSCULOSKELETAL
+  - SHADOW_GORD
+
+disposition_guidance: >
+  Acute pericarditis diagnosis relies heavily on clinical presentation (pleuritic
+  chest pain worsening supine, relieved by leaning forward) + ECG findings
+  (diffuse ST elevation, PR depression) + elevated inflammatory markers (CRP, ESR).
+  Echocardiography/CT/CMR confirms pericardial involvement. Troponin elevation
+  can occur with myopericarditis, causing overlap with UA. Hemodynamically unstable
+  (tamponade) presentations are red-flag conditions managed outside stepwise workup.
+
+provenance:
+  authors:
+    - "Vishnu — Chat 1 Evidence Sourcing lead"
+    - "Claude — AI-assisted extraction from guideline source"
+  clinical_reviewer: null
+  created: "2026-08-08"
+  last_reviewed: "2026-08-08"
+  review_due: null

@@ -1,0 +1,171 @@
+schema_version: "1.0.0"
+condition_id: UNSTABLE_ANGINA
+display_name: "Unstable Angina"
+class: CANDIDATE
+visibility: REPORTED
+enabled: true
+verification_status: unverified
+
+priors:
+  ED_UNDIFFERENTIATED_CHEST_PAIN:
+    weight: 0.263
+    citation_id: BRUYNINCKX_2008
+    population: >
+      PROVISIONAL / FLAGGED -- see open decision in EXTRACTION_NOTES.
+      This weight is Bruyninckx 2008's pooled prevalence of ACS (=AMI+UA
+      combined), 4594/17416 (26.3%), across combined selected+non-selected
+      populations (a clean non-selected-only prevalence figure was not
+      separately reported for ACS). No source located (Goodacre 2003
+      QJM -- paywalled -- was the best candidate for a genuine UA-isolated,
+      undifferentiated-population prevalence figure and could not be
+      accessed) that isolates unstable-angina-specific incident prevalence
+      from an undifferentiated chest-pain population. Using ACS-composite
+      prevalence as a stand-in likely OVERESTIMATES the true UA-specific
+      prior, since it includes AMI patients who are out of scope for this
+      condition_id. This is the single most urgent open sourcing gap for
+      this file.
+    verification_status: unverified
+
+dependency_groups:
+  - group_id: RADIATION_SITE_CLUSTER
+    redundancy_lambda: 0.35
+    rationale: >
+      Pain radiating to the right arm/shoulder and pain radiating to the
+      neck both reflect the same underlying referred-pain mechanism and
+      commonly co-occur with other radiation patterns; treating each site
+      as fully independent evidence would overweight a single radiating-pain
+      episode reported across multiple sites.
+
+features:
+  - feature_id: CHEST_WALL_TENDERNESS
+    tier: BEDSIDE
+    dependency_group: null
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 2
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 0.17
+        derived_from:
+          sensitivity: 0.06
+          specificity: 0.647
+          n: 2
+          prevalence_in_study: 0.263
+        citation_id: BRUYNINCKX_2008
+      - value: ABSENT
+        lr: 1.41
+        derived_from:
+          sensitivity: 0.06
+          specificity: 0.647
+          n: 2
+          prevalence_in_study: 0.263
+        citation_id: BRUYNINCKX_2008
+
+  - feature_id: PAIN_RADIATION_RIGHT_ARM_SHOULDER
+    tier: HISTORY
+    dependency_group: RADIATION_SITE_CLUSTER
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 2
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 3.78
+        derived_from:
+          sensitivity: 0.18
+          specificity: 0.9524
+          n: 1
+          prevalence_in_study: 0.263
+        citation_id: BRUYNINCKX_2008
+      - value: ABSENT
+        lr: 0.86
+        derived_from:
+          sensitivity: 0.18
+          specificity: 0.9524
+          n: 1
+          prevalence_in_study: 0.263
+        citation_id: BRUYNINCKX_2008
+
+  - feature_id: PAIN_RADIATION_NECK
+    tier: HISTORY
+    dependency_group: RADIATION_SITE_CLUSTER
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 2
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 1.44
+        derived_from:
+          sensitivity: 0.35
+          specificity: 0.76
+          n: 1
+          prevalence_in_study: 0.263
+        citation_id: BRUYNINCKX_2008
+      - value: ABSENT
+        lr: 0.86
+        derived_from:
+          sensitivity: 0.35
+          specificity: 0.76
+          n: 1
+          prevalence_in_study: 0.263
+        citation_id: BRUYNINCKX_2008
+
+  - feature_id: CHEST_PAIN_OPPRESSIVE_CHARACTER
+    tier: HISTORY
+    dependency_group: null
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 2
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 1.68
+        derived_from:
+          sensitivity: 0.56
+          specificity: 0.67
+          n: 4
+          prevalence_in_study: 0.263
+        citation_id: BRUYNINCKX_2008
+      - value: ABSENT
+        lr: 0.66
+        derived_from:
+          sensitivity: 0.56
+          specificity: 0.67
+          n: 4
+          prevalence_in_study: 0.263
+        citation_id: BRUYNINCKX_2008
+
+expected_profile: []
+red_flag_links: []
+mimics:
+  - PULMONARY_EMBOLISM
+  - CONGESTIVE_HEART_FAILURE
+  - ACUTE_PERICARDITIS
+  - SHADOW_MUSCULOSKELETAL
+  - SHADOW_ANXIETY_PANIC
+  - SHADOW_GORD
+  - SHADOW_DANGEROUS_OOS
+
+disposition_guidance: >
+  PROVISIONAL -- pending clinical lead review and further sourcing (see prior
+  probability caveat above). Findings drawn from a meta-analysis of ACS
+  (AMI+UA combined) diagnostic accuracy, not UA specifically. Troponin,
+  ECG findings, and TIMI/HEART risk-score features remain unsourced pending
+  access to non-paywalled primary literature. Hemodynamically unstable
+  presentations bypass stepwise workup via the red-flag gate (red-flags.json
+  -- not yet built).
+
+provenance:
+  authors:
+    - "Vishnu — Chat 1 Evidence Sourcing lead"
+    - "Claude — AI-assisted extraction, pending clinical verification"
+  clinical_reviewer: null
+  created: "2026-08-08"
+  last_reviewed: "2026-08-08"
+  review_due: null

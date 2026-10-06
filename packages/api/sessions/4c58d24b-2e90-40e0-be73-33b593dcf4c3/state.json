@@ -1,0 +1,3080 @@
+{
+  "metadata": {
+    "careSetting": "ED_UNDIFFERENTIATED_CHEST_PAIN",
+    "patientAge": 60,
+    "patientSex": "MALE",
+    "patientPregnancy": "NOT_PREGNANT",
+    "sessionId": "4c58d24b-2e90-40e0-be73-33b593dcf4c3",
+    "createdAt": "2026-10-06T06:31:43.796Z"
+  },
+  "halted": false,
+  "haltReason": null,
+  "haltRule": null,
+  "halt": null,
+  "turn": 39,
+  "evidenceLog": [
+    {
+      "id": "bb92726c-4c89-495b-8f9d-5bf75aaa9ca3",
+      "featureId": "VS_HEART_RATE",
+      "value": "70",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T06:32:15.539Z",
+      "observerConfidence": "HIGH",
+      "turn": 1,
+      "rawValue": 70
+    },
+    {
+      "id": "84a21e00-aae1-4250-acfd-b1c727e5fce2",
+      "featureId": "VS_RESP_RATE",
+      "value": "18",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T06:32:15.585Z",
+      "observerConfidence": "HIGH",
+      "turn": 2,
+      "rawValue": 18
+    },
+    {
+      "id": "e517a8ab-aae1-493e-8762-8f28faf0c3d0",
+      "featureId": "VS_SBP",
+      "value": "120",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T06:32:15.616Z",
+      "observerConfidence": "HIGH",
+      "turn": 3,
+      "rawValue": 120
+    },
+    {
+      "id": "04cc58f4-b360-4f69-b173-e023e782f090",
+      "featureId": "VS_DBP",
+      "value": "72",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T06:32:15.637Z",
+      "observerConfidence": "HIGH",
+      "turn": 4,
+      "rawValue": 72
+    },
+    {
+      "id": "7301e9c3-2c60-45b9-9862-86f0502f0f01",
+      "featureId": "VS_SPO2_ROOM_AIR",
+      "value": "97",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T06:32:15.654Z",
+      "observerConfidence": "HIGH",
+      "turn": 5,
+      "rawValue": 97
+    },
+    {
+      "id": "9f03378a-61c1-46da-b887-0dd1bcb62af2",
+      "featureId": "VS_TEMPERATURE",
+      "value": "36",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T06:32:15.679Z",
+      "observerConfidence": "HIGH",
+      "turn": 6,
+      "rawValue": 36
+    },
+    {
+      "id": "e7a16990-4822-4bf8-92e9-7d89c66725fc",
+      "featureId": "EX_MENTAL_STATUS",
+      "value": "ALERT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:32:15.697Z",
+      "observerConfidence": "HIGH",
+      "turn": 7
+    },
+    {
+      "id": "a936a5fa-2bd2-4863-985a-a17a7715e0c3",
+      "featureId": "PRIOR_CHF_HISTORY",
+      "value": "PRESENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:32:48.744Z",
+      "observerConfidence": "HIGH",
+      "turn": 8
+    },
+    {
+      "id": "32740a9e-da75-47b3-9022-ed42bd1289de",
+      "featureId": "PRIOR_MI_HISTORY",
+      "value": "ABSENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:32:58.458Z",
+      "observerConfidence": "HIGH",
+      "turn": 9
+    },
+    {
+      "id": "c18e4d9b-4c55-4814-ace9-0f756fe75ae8",
+      "featureId": "PAROXYSMAL_NOCTURNAL_DYSPNEA",
+      "value": "PRESENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:33:13.154Z",
+      "observerConfidence": "HIGH",
+      "turn": 10
+    },
+    {
+      "id": "dd0c9286-9a50-48f5-8830-53d2caa84097",
+      "featureId": "ORTHOPNEA",
+      "value": "ABSENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:33:23.795Z",
+      "observerConfidence": "HIGH",
+      "turn": 11
+    },
+    {
+      "id": "d360fd33-e294-4c75-a937-5c6e6356387c",
+      "featureId": "CAD_HISTORY",
+      "value": "ABSENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:33:26.072Z",
+      "observerConfidence": "HIGH",
+      "turn": 12
+    },
+    {
+      "id": "132b0add-ed00-4680-a6ca-613d1337b281",
+      "featureId": "INITIAL_CLINICAL_JUDGMENT_CHF",
+      "value": "HIGH_SUSPICION",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:33:28.037Z",
+      "observerConfidence": "HIGH",
+      "turn": 13
+    },
+    {
+      "id": "e83958cc-aea9-47c7-be34-08745ab49efb",
+      "featureId": "PULMONARY_RALES",
+      "value": "ABSENT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:33:30.046Z",
+      "observerConfidence": "HIGH",
+      "turn": 14
+    },
+    {
+      "id": "9f6957dc-7595-41c0-a0be-14282b1fba5b",
+      "featureId": "JUGULAR_VENOUS_DISTENSION",
+      "value": "PRESENT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:33:38.817Z",
+      "observerConfidence": "HIGH",
+      "turn": 15
+    },
+    {
+      "id": "9753ea1d-29dd-4098-ba24-c7c1e9af818f",
+      "featureId": "BNP",
+      "value": "ELEVATED",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:33:40.809Z",
+      "observerConfidence": "HIGH",
+      "turn": 16
+    },
+    {
+      "id": "e5c73839-3904-4a3a-a3e0-b00c60cf5873",
+      "featureId": "PRIOR_CHF_HISTORY",
+      "value": "ABSENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:35:23.217Z",
+      "observerConfidence": "HIGH",
+      "turn": 17,
+      "corrects": "a936a5fa-2bd2-4863-985a-a17a7715e0c3"
+    },
+    {
+      "id": "aa108f15-dc55-4855-80db-1b13242264f2",
+      "featureId": "PRIOR_MI_HISTORY",
+      "value": "ABSENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:35:28.023Z",
+      "observerConfidence": "HIGH",
+      "turn": 18,
+      "corrects": "32740a9e-da75-47b3-9022-ed42bd1289de"
+    },
+    {
+      "id": "fe48fdcb-bdfe-40ef-bac8-123ef288791a",
+      "featureId": "PAROXYSMAL_NOCTURNAL_DYSPNEA",
+      "value": "ABSENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:35:30.687Z",
+      "observerConfidence": "HIGH",
+      "turn": 19,
+      "corrects": "c18e4d9b-4c55-4814-ace9-0f756fe75ae8"
+    },
+    {
+      "id": "a6417881-ed83-4fb2-92dc-8384c1bfbbed",
+      "featureId": "ORTHOPNEA",
+      "value": "PRESENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:35:57.555Z",
+      "observerConfidence": "HIGH",
+      "turn": 20,
+      "corrects": "dd0c9286-9a50-48f5-8830-53d2caa84097"
+    },
+    {
+      "id": "f7cf7ed9-4906-42f5-baa8-562aabc941ac",
+      "featureId": "CAD_HISTORY",
+      "value": "PRESENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:36:00.282Z",
+      "observerConfidence": "HIGH",
+      "turn": 21,
+      "corrects": "d360fd33-e294-4c75-a937-5c6e6356387c"
+    },
+    {
+      "id": "c2294f7a-18d5-432b-990c-bbda0b53baf2",
+      "featureId": "INITIAL_CLINICAL_JUDGMENT_CHF",
+      "value": "NOT_HIGH_SUSPICION",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:36:02.806Z",
+      "observerConfidence": "HIGH",
+      "turn": 22,
+      "corrects": "132b0add-ed00-4680-a6ca-613d1337b281"
+    },
+    {
+      "id": "ab4f6968-abe6-46d3-a83c-6f5440d02ea7",
+      "featureId": "PULMONARY_RALES",
+      "value": "PRESENT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:36:06.173Z",
+      "observerConfidence": "HIGH",
+      "turn": 23,
+      "corrects": "e83958cc-aea9-47c7-be34-08745ab49efb"
+    },
+    {
+      "id": "9f0740fa-1568-480c-9472-5c929b6fb46c",
+      "featureId": "JUGULAR_VENOUS_DISTENSION",
+      "value": "ABSENT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:36:14.278Z",
+      "observerConfidence": "HIGH",
+      "turn": 24,
+      "corrects": "9f6957dc-7595-41c0-a0be-14282b1fba5b"
+    },
+    {
+      "id": "bdce8b2e-f356-4c1d-8c5e-34042e9dc1b3",
+      "featureId": "BNP",
+      "value": "NEGATIVE",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:36:18.573Z",
+      "observerConfidence": "HIGH",
+      "turn": 25,
+      "corrects": "9753ea1d-29dd-4098-ba24-c7c1e9af818f"
+    },
+    {
+      "id": "b1cb73aa-0ac0-498f-988e-170134ddd9c4",
+      "featureId": "PRIOR_CHF_HISTORY",
+      "value": "PRESENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:36:43.451Z",
+      "observerConfidence": "HIGH",
+      "turn": 26,
+      "corrects": "e5c73839-3904-4a3a-a3e0-b00c60cf5873"
+    },
+    {
+      "id": "f1dff972-ea9a-4472-8421-a939a3f3ddee",
+      "featureId": "PAIN_RADIATION_RIGHT_ARM_SHOULDER",
+      "value": "ABSENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:37:38.667Z",
+      "observerConfidence": "HIGH",
+      "turn": 27
+    },
+    {
+      "id": "de025815-b765-4faa-8bc6-1fbf2ba5bd15",
+      "featureId": "CHEST_PAIN_PLEURITIC",
+      "value": "PRESENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:37:56.289Z",
+      "observerConfidence": "HIGH",
+      "turn": 28
+    },
+    {
+      "id": "51ca6b01-ac1a-4b71-a778-8ed2c34d532b",
+      "featureId": "THIRD_HEART_SOUND",
+      "value": "ABSENT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:37:59.320Z",
+      "observerConfidence": "HIGH",
+      "turn": 29
+    },
+    {
+      "id": "d8e74cfd-9483-4cef-a7a9-90ea413e1885",
+      "featureId": "ECG_ATRIAL_FIBRILLATION",
+      "value": "ABSENT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:38:01.430Z",
+      "observerConfidence": "HIGH",
+      "turn": 30
+    },
+    {
+      "id": "84ebf2cd-cef3-443d-af3a-a4b34e0a5520",
+      "featureId": "ECG_NEW_T_WAVE_CHANGES",
+      "value": "ABSENT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:38:02.504Z",
+      "observerConfidence": "HIGH",
+      "turn": 31
+    },
+    {
+      "id": "d0c42697-fa4f-428b-8d0d-41f258274711",
+      "featureId": "CHEST_PAIN_OPPRESSIVE_CHARACTER",
+      "value": "ABSENT",
+      "source": "PATIENT_REPORTED",
+      "observedAt": "2026-10-06T06:38:04.554Z",
+      "observerConfidence": "HIGH",
+      "turn": 32
+    },
+    {
+      "id": "62c1ad84-1005-4ad0-8f98-2e1ef4d68208",
+      "featureId": "CARDIAC_MURMUR",
+      "value": "ABSENT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:38:06.062Z",
+      "observerConfidence": "HIGH",
+      "turn": 33
+    },
+    {
+      "id": "c0c0ec03-2bfa-40ed-ad57-a05fb0d71c6e",
+      "featureId": "LOWER_EXTREMITY_EDEMA",
+      "value": "ABSENT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:38:07.879Z",
+      "observerConfidence": "HIGH",
+      "turn": 34
+    },
+    {
+      "id": "fe69d609-345b-4fff-80a6-6fe3919638ff",
+      "featureId": "ECG_ANY_ABNORMAL_FINDING",
+      "value": "ABSENT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:38:09.091Z",
+      "observerConfidence": "HIGH",
+      "turn": 35
+    },
+    {
+      "id": "379a792f-a63e-49b6-a1d0-a3c1ffec8769",
+      "featureId": "REVISED_GENEVA_SCORE_CATEGORY",
+      "value": "INTERMEDIATE",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:38:10.130Z",
+      "observerConfidence": "HIGH",
+      "turn": 36
+    },
+    {
+      "id": "34e98c79-d513-430b-9305-aadead5dbcff",
+      "featureId": "WELLS_SCORE_CATEGORY",
+      "value": "INTERMEDIATE",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:38:11.094Z",
+      "observerConfidence": "HIGH",
+      "turn": 37
+    },
+    {
+      "id": "0a596db2-a9bf-4019-9fcb-3bde1c6eaa1e",
+      "featureId": "WELLS_DICHOTOMIZED",
+      "value": "PE_LIKELY",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:38:35.954Z",
+      "observerConfidence": "HIGH",
+      "turn": 38
+    },
+    {
+      "id": "13a17a89-30b9-49ab-ac9f-0636af46897c",
+      "featureId": "SIMPLIFIED_GENEVA_SCORE_CATEGORY",
+      "value": "HIGH",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T06:38:42.836Z",
+      "observerConfidence": "HIGH",
+      "turn": 39
+    }
+  ],
+  "answeredEvidence": [
+    {
+      "evidenceId": "bb92726c-4c89-495b-8f9d-5bf75aaa9ca3",
+      "featureId": "VS_HEART_RATE",
+      "value": "70",
+      "rawValue": 70,
+      "turn": 1,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "84a21e00-aae1-4250-acfd-b1c727e5fce2",
+      "featureId": "VS_RESP_RATE",
+      "value": "18",
+      "rawValue": 18,
+      "turn": 2,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "e517a8ab-aae1-493e-8762-8f28faf0c3d0",
+      "featureId": "VS_SBP",
+      "value": "120",
+      "rawValue": 120,
+      "turn": 3,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "04cc58f4-b360-4f69-b173-e023e782f090",
+      "featureId": "VS_DBP",
+      "value": "72",
+      "rawValue": 72,
+      "turn": 4,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "7301e9c3-2c60-45b9-9862-86f0502f0f01",
+      "featureId": "VS_SPO2_ROOM_AIR",
+      "value": "97",
+      "rawValue": 97,
+      "turn": 5,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "9f03378a-61c1-46da-b887-0dd1bcb62af2",
+      "featureId": "VS_TEMPERATURE",
+      "value": "36",
+      "rawValue": 36,
+      "turn": 6,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "e7a16990-4822-4bf8-92e9-7d89c66725fc",
+      "featureId": "EX_MENTAL_STATUS",
+      "value": "ALERT",
+      "rawValue": null,
+      "turn": 7,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "aa108f15-dc55-4855-80db-1b13242264f2",
+      "featureId": "PRIOR_MI_HISTORY",
+      "value": "ABSENT",
+      "rawValue": null,
+      "turn": 18,
+      "isVital": false,
+      "prompt": "Prior myocardial infarction history?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "HISTORY"
+    },
+    {
+      "evidenceId": "fe48fdcb-bdfe-40ef-bac8-123ef288791a",
+      "featureId": "PAROXYSMAL_NOCTURNAL_DYSPNEA",
+      "value": "ABSENT",
+      "rawValue": null,
+      "turn": 19,
+      "isVital": false,
+      "prompt": "Paroxysmal nocturnal dyspnea (wakes at night short of breath)?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "HISTORY"
+    },
+    {
+      "evidenceId": "a6417881-ed83-4fb2-92dc-8384c1bfbbed",
+      "featureId": "ORTHOPNEA",
+      "value": "PRESENT",
+      "rawValue": null,
+      "turn": 20,
+      "isVital": false,
+      "prompt": "Does the patient experience orthopnea (shortness of breath when lying flat)?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "HISTORY"
+    },
+    {
+      "evidenceId": "f7cf7ed9-4906-42f5-baa8-562aabc941ac",
+      "featureId": "CAD_HISTORY",
+      "value": "PRESENT",
+      "rawValue": null,
+      "turn": 21,
+      "isVital": false,
+      "prompt": "History of coronary artery disease?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "HISTORY"
+    },
+    {
+      "evidenceId": "c2294f7a-18d5-432b-990c-bbda0b53baf2",
+      "featureId": "INITIAL_CLINICAL_JUDGMENT_CHF",
+      "value": "NOT_HIGH_SUSPICION",
+      "rawValue": null,
+      "turn": 22,
+      "isVital": false,
+      "prompt": "Initial clinical suspicion for heart failure",
+      "stateValues": [
+        "HIGH_SUSPICION",
+        "NOT_HIGH_SUSPICION"
+      ],
+      "tier": "BEDSIDE"
+    },
+    {
+      "evidenceId": "ab4f6968-abe6-46d3-a83c-6f5440d02ea7",
+      "featureId": "PULMONARY_RALES",
+      "value": "PRESENT",
+      "rawValue": null,
+      "turn": 23,
+      "isVital": false,
+      "prompt": "Pulmonary rales on auscultation?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "BEDSIDE"
+    },
+    {
+      "evidenceId": "9f0740fa-1568-480c-9472-5c929b6fb46c",
+      "featureId": "JUGULAR_VENOUS_DISTENSION",
+      "value": "ABSENT",
+      "rawValue": null,
+      "turn": 24,
+      "isVital": false,
+      "prompt": "Jugular venous distension?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "BEDSIDE"
+    },
+    {
+      "evidenceId": "bdce8b2e-f356-4c1d-8c5e-34042e9dc1b3",
+      "featureId": "BNP",
+      "value": "NEGATIVE",
+      "rawValue": null,
+      "turn": 25,
+      "isVital": false,
+      "prompt": "B-type natriuretic peptide level",
+      "stateValues": [
+        "ELEVATED",
+        "NEGATIVE"
+      ],
+      "tier": "NEAR_BEDSIDE"
+    },
+    {
+      "evidenceId": "b1cb73aa-0ac0-498f-988e-170134ddd9c4",
+      "featureId": "PRIOR_CHF_HISTORY",
+      "value": "PRESENT",
+      "rawValue": null,
+      "turn": 26,
+      "isVital": false,
+      "prompt": "Prior history of congestive heart failure?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "HISTORY"
+    },
+    {
+      "evidenceId": "f1dff972-ea9a-4472-8421-a939a3f3ddee",
+      "featureId": "PAIN_RADIATION_RIGHT_ARM_SHOULDER",
+      "value": "ABSENT",
+      "rawValue": null,
+      "turn": 27,
+      "isVital": false,
+      "prompt": "Does the chest pain radiate to the right arm and/or shoulder?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "HISTORY"
+    },
+    {
+      "evidenceId": "de025815-b765-4faa-8bc6-1fbf2ba5bd15",
+      "featureId": "CHEST_PAIN_PLEURITIC",
+      "value": "PRESENT",
+      "rawValue": null,
+      "turn": 28,
+      "isVital": false,
+      "prompt": "Is the chest pain pleuritic (worse with breathing or movement)?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "HISTORY"
+    },
+    {
+      "evidenceId": "51ca6b01-ac1a-4b71-a778-8ed2c34d532b",
+      "featureId": "THIRD_HEART_SOUND",
+      "value": "ABSENT",
+      "rawValue": null,
+      "turn": 29,
+      "isVital": false,
+      "prompt": "Third heart sound on auscultation?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "BEDSIDE"
+    },
+    {
+      "evidenceId": "d8e74cfd-9483-4cef-a7a9-90ea413e1885",
+      "featureId": "ECG_ATRIAL_FIBRILLATION",
+      "value": "ABSENT",
+      "rawValue": null,
+      "turn": 30,
+      "isVital": false,
+      "prompt": "Atrial fibrillation on ECG?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "BEDSIDE"
+    },
+    {
+      "evidenceId": "84ebf2cd-cef3-443d-af3a-a4b34e0a5520",
+      "featureId": "ECG_NEW_T_WAVE_CHANGES",
+      "value": "ABSENT",
+      "rawValue": null,
+      "turn": 31,
+      "isVital": false,
+      "prompt": "New T wave changes on ECG?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "BEDSIDE"
+    },
+    {
+      "evidenceId": "d0c42697-fa4f-428b-8d0d-41f258274711",
+      "featureId": "CHEST_PAIN_OPPRESSIVE_CHARACTER",
+      "value": "ABSENT",
+      "rawValue": null,
+      "turn": 32,
+      "isVital": false,
+      "prompt": "Is the chest pain described as oppressive/pressure-like in character?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "HISTORY"
+    },
+    {
+      "evidenceId": "62c1ad84-1005-4ad0-8f98-2e1ef4d68208",
+      "featureId": "CARDIAC_MURMUR",
+      "value": "ABSENT",
+      "rawValue": null,
+      "turn": 33,
+      "isVital": false,
+      "prompt": "Cardiac murmur on auscultation?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "BEDSIDE"
+    },
+    {
+      "evidenceId": "c0c0ec03-2bfa-40ed-ad57-a05fb0d71c6e",
+      "featureId": "LOWER_EXTREMITY_EDEMA",
+      "value": "ABSENT",
+      "rawValue": null,
+      "turn": 34,
+      "isVital": false,
+      "prompt": "Lower extremity edema?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "BEDSIDE"
+    },
+    {
+      "evidenceId": "fe69d609-345b-4fff-80a6-6fe3919638ff",
+      "featureId": "ECG_ANY_ABNORMAL_FINDING",
+      "value": "ABSENT",
+      "rawValue": null,
+      "turn": 35,
+      "isVital": false,
+      "prompt": "Any abnormal finding on ECG?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "BEDSIDE"
+    },
+    {
+      "evidenceId": "379a792f-a63e-49b6-a1d0-a3c1ffec8769",
+      "featureId": "REVISED_GENEVA_SCORE_CATEGORY",
+      "value": "INTERMEDIATE",
+      "rawValue": null,
+      "turn": 36,
+      "isVital": false,
+      "prompt": "Revised Geneva score category for PE",
+      "stateValues": [
+        "LOW",
+        "INTERMEDIATE",
+        "HIGH"
+      ],
+      "tier": "BEDSIDE"
+    },
+    {
+      "evidenceId": "34e98c79-d513-430b-9305-aadead5dbcff",
+      "featureId": "WELLS_SCORE_CATEGORY",
+      "value": "INTERMEDIATE",
+      "rawValue": null,
+      "turn": 37,
+      "isVital": false,
+      "prompt": "Wells clinical probability score category for PE",
+      "stateValues": [
+        "LOW",
+        "INTERMEDIATE",
+        "HIGH"
+      ],
+      "tier": "BEDSIDE"
+    },
+    {
+      "evidenceId": "0a596db2-a9bf-4019-9fcb-3bde1c6eaa1e",
+      "featureId": "WELLS_DICHOTOMIZED",
+      "value": "PE_LIKELY",
+      "rawValue": null,
+      "turn": 38,
+      "isVital": false,
+      "prompt": "Wells score dichotomized (PE unlikely vs PE likely)",
+      "stateValues": [
+        "PE_UNLIKELY",
+        "PE_LIKELY"
+      ],
+      "tier": "BEDSIDE"
+    },
+    {
+      "evidenceId": "13a17a89-30b9-49ab-ac9f-0636af46897c",
+      "featureId": "SIMPLIFIED_GENEVA_SCORE_CATEGORY",
+      "value": "HIGH",
+      "rawValue": null,
+      "turn": 39,
+      "isVital": false,
+      "prompt": "Simplified Geneva score category for PE",
+      "stateValues": [
+        "LOW",
+        "INTERMEDIATE",
+        "HIGH"
+      ],
+      "tier": "BEDSIDE"
+    }
+  ],
+  "minimumSafetySet": {
+    "complete": true,
+    "missing": []
+  },
+  "distribution": {
+    "entries": [
+      {
+        "id": "UNKNOWN",
+        "probability": 0.39796383383863965
+      },
+      {
+        "id": "CONGESTIVE_HEART_FAILURE",
+        "probability": 0.2661704134120005
+      },
+      {
+        "id": "PULMONARY_EMBOLISM",
+        "probability": 0.22383398194949247
+      },
+      {
+        "id": "UNSTABLE_ANGINA",
+        "probability": 0.08592985920171331
+      },
+      {
+        "id": "ACUTE_PERICARDITIS",
+        "probability": 0.02610191159815418
+      }
+    ],
+    "scopeFit": 0.6020361661613604
+  },
+  "lastMovement": {
+    "seq": 38,
+    "turn": 39,
+    "at": "2026-10-06T06:38:42.897Z",
+    "kind": "EVIDENCE_ADDED",
+    "featureId": "SIMPLIFIED_GENEVA_SCORE_CATEGORY",
+    "value": "HIGH",
+    "previousValue": null,
+    "evidenceId": "13a17a89-30b9-49ab-ac9f-0636af46897c",
+    "corrects": null,
+    "before": [
+      {
+        "id": "UNKNOWN",
+        "probability": 0.4146877800022997
+      },
+      {
+        "id": "CONGESTIVE_HEART_FAILURE",
+        "probability": 0.27735590135276234
+      },
+      {
+        "id": "PULMONARY_EMBOLISM",
+        "probability": 0.19121654891611212
+      },
+      {
+        "id": "UNSTABLE_ANGINA",
+        "probability": 0.08954095703761122
+      },
+      {
+        "id": "ACUTE_PERICARDITIS",
+        "probability": 0.02719881269121467
+      }
+    ],
+    "after": [
+      {
+        "id": "UNKNOWN",
+        "probability": 0.39796383383863965
+      },
+      {
+        "id": "CONGESTIVE_HEART_FAILURE",
+        "probability": 0.2661704134120005
+      },
+      {
+        "id": "PULMONARY_EMBOLISM",
+        "probability": 0.22383398194949247
+      },
+      {
+        "id": "UNSTABLE_ANGINA",
+        "probability": 0.08592985920171331
+      },
+      {
+        "id": "ACUTE_PERICARDITIS",
+        "probability": 0.02610191159815418
+      }
+    ],
+    "citations": [
+      {
+        "hypothesisId": "PULMONARY_EMBOLISM",
+        "citationId": "ROBERTEBADI_2017"
+      }
+    ],
+    "note": null
+  },
+  "lastGateResult": {
+    "status": "PROCEED",
+    "firedRules": [],
+    "unevaluableRules": [
+      {
+        "ruleId": "RF-02",
+        "missingFeatures": [
+          "SYNCOPE"
+        ]
+      },
+      {
+        "ruleId": "RF-03",
+        "missingFeatures": [
+          "ECG_ST_ELEVATION"
+        ]
+      },
+      {
+        "ruleId": "RF-05",
+        "missingFeatures": [
+          "JVD",
+          "MUFFLED_HEART_SOUNDS"
+        ]
+      }
+    ],
+    "primaryRule": null
+  },
+  "redFlagChecks": [
+    {
+      "ruleId": "RF-02",
+      "displayName": "Massive PE Suspected",
+      "missingFindings": [
+        {
+          "featureId": "SYNCOPE",
+          "prompt": "Has the patient had a syncopal episode with this presentation?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "HISTORY",
+          "answerable": true
+        }
+      ]
+    },
+    {
+      "ruleId": "RF-03",
+      "displayName": "Acute ST-Elevation MI",
+      "missingFindings": [
+        {
+          "featureId": "ECG_ST_ELEVATION",
+          "prompt": "ST elevation ≥1mm in contiguous leads on ECG?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": true
+        }
+      ]
+    },
+    {
+      "ruleId": "RF-05",
+      "displayName": "Pericardial Tamponade",
+      "missingFindings": [
+        {
+          "featureId": "JVD",
+          "prompt": "Is jugular venous distension present?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": true
+        },
+        {
+          "featureId": "MUFFLED_HEART_SOUNDS",
+          "prompt": "Muffled or distant heart sounds on auscultation?",
+          "stateValues": [
+            "PRESENT",
+            "ABSENT"
+          ],
+          "tier": "BEDSIDE",
+          "answerable": true
+        }
+      ]
+    }
+  ],
+  "nextQuestion": {
+    "featureId": "CHEST_WALL_TENDERNESS",
+    "tier": "BEDSIDE",
+    "cost": 1,
+    "eigBits": 0.04629826302011475,
+    "value": 0.04629826302011475,
+    "gatedOut": false,
+    "method": "EXACT_BINARY",
+    "incoherentHypotheses": [],
+    "prompt": "Is pain reproducible or tenderness elicited on palpation of the chest wall?",
+    "stateValues": [
+      "PRESENT",
+      "ABSENT"
+    ]
+  },
+  "deferredFeatureIds": [],
+  "pending": [],
+  "trace": [
+    {
+      "seq": 0,
+      "turn": 1,
+      "at": "2026-10-06T06:32:15.569Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_HEART_RATE",
+      "value": "70",
+      "previousValue": null,
+      "evidenceId": "bb92726c-4c89-495b-8f9d-5bf75aaa9ca3",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 1,
+      "turn": 2,
+      "at": "2026-10-06T06:32:15.593Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_RESP_RATE",
+      "value": "18",
+      "previousValue": null,
+      "evidenceId": "84a21e00-aae1-4250-acfd-b1c727e5fce2",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 2,
+      "turn": 3,
+      "at": "2026-10-06T06:32:15.624Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_SBP",
+      "value": "120",
+      "previousValue": null,
+      "evidenceId": "e517a8ab-aae1-493e-8762-8f28faf0c3d0",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 3,
+      "turn": 4,
+      "at": "2026-10-06T06:32:15.642Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_DBP",
+      "value": "72",
+      "previousValue": null,
+      "evidenceId": "04cc58f4-b360-4f69-b173-e023e782f090",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 4,
+      "turn": 5,
+      "at": "2026-10-06T06:32:15.658Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_SPO2_ROOM_AIR",
+      "value": "97",
+      "previousValue": null,
+      "evidenceId": "7301e9c3-2c60-45b9-9862-86f0502f0f01",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 5,
+      "turn": 6,
+      "at": "2026-10-06T06:32:15.685Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_TEMPERATURE",
+      "value": "36",
+      "previousValue": null,
+      "evidenceId": "9f03378a-61c1-46da-b887-0dd1bcb62af2",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 6,
+      "turn": 7,
+      "at": "2026-10-06T06:32:15.817Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "EX_MENTAL_STATUS",
+      "value": "ALERT",
+      "previousValue": null,
+      "evidenceId": "e7a16990-4822-4bf8-92e9-7d89c66725fc",
+      "corrects": null,
+      "before": null,
+      "after": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.43016638662953677
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.3452053416823804
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.1636419246674235
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03747465231882742
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.02351169470183189
+        }
+      ],
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 7,
+      "turn": 8,
+      "at": "2026-10-06T06:32:48.820Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "PRIOR_CHF_HISTORY",
+      "value": "PRESENT",
+      "previousValue": null,
+      "evidenceId": "a936a5fa-2bd2-4863-985a-a17a7715e0c3",
+      "corrects": null,
+      "before": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.43016638662953677
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.3452053416823804
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.1636419246674235
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03747465231882742
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.02351169470183189
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.7535573213338739
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.1619001548752538
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0615893146726898
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.014104198289067003
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.008849010829115527
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 8,
+      "turn": 9,
+      "at": "2026-10-06T06:32:58.558Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "PRIOR_MI_HISTORY",
+      "value": "ABSENT",
+      "previousValue": null,
+      "evidenceId": "32740a9e-da75-47b3-9022-ed42bd1289de",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.7535573213338739
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.1619001548752538
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0615893146726898
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.014104198289067003
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.008849010829115527
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.6784400192288749
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.21124835588668098
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0803621310604553
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.018403247989236815
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.011546245834751927
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 9,
+      "turn": 10,
+      "at": "2026-10-06T06:33:13.220Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "PAROXYSMAL_NOCTURNAL_DYSPNEA",
+      "value": "PRESENT",
+      "previousValue": null,
+      "evidenceId": "c18e4d9b-4c55-4814-ace9-0f756fe75ae8",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.6784400192288749
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.21124835588668098
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0803621310604553
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.018403247989236815
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.011546245834751927
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.8458118632103602
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.10129366942967255
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.038533673335040666
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.008824364622529928
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.005536429402397237
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 10,
+      "turn": 11,
+      "at": "2026-10-06T06:33:23.835Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "ORTHOPNEA",
+      "value": "ABSENT",
+      "previousValue": null,
+      "evidenceId": "dd0c9286-9a50-48f5-8830-53d2caa84097",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.8458118632103602
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.10129366942967255
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.038533673335040666
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.008824364622529928
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.005536429402397237
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.8281950043705788
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.11286703890452746
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.04293636149157368
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.009832597740476989
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.006168997492843203
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 11,
+      "turn": 12,
+      "at": "2026-10-06T06:33:26.122Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "CAD_HISTORY",
+      "value": "ABSENT",
+      "previousValue": null,
+      "evidenceId": "d360fd33-e294-4c75-a937-5c6e6356387c",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.8281950043705788
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.11286703890452746
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.04293636149157368
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.009832597740476989
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.006168997492843203
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.8037445361302555
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.12892973801292187
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.04904685984558636
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.011231926193602778
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.007046939817632988
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 12,
+      "turn": 13,
+      "at": "2026-10-06T06:33:28.085Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "INITIAL_CLINICAL_JUDGMENT_CHF",
+      "value": "HIGH_SUSPICION",
+      "previousValue": null,
+      "evidenceId": "132b0add-ed00-4680-a6ca-613d1337b281",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.8037445361302555
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.12892973801292187
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.04904685984558636
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.011231926193602778
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.007046939817632988
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9474230954124544
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.034540320051938904
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.013139670201139745
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.003009036794039815
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0018878775404274873
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 13,
+      "turn": 14,
+      "at": "2026-10-06T06:33:30.127Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "PULMONARY_RALES",
+      "value": "ABSENT",
+      "previousValue": null,
+      "evidenceId": "e83958cc-aea9-47c7-be34-08745ab49efb",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9474230954124544
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.034540320051938904
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.013139670201139745
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.003009036794039815
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0018878775404274873
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9018653104601936
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.0644694397947777
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.024525168721129472
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.00561636128854374
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0035237197353552244
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 14,
+      "turn": 15,
+      "at": "2026-10-06T06:33:38.887Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "JUGULAR_VENOUS_DISTENSION",
+      "value": "PRESENT",
+      "previousValue": null,
+      "evidenceId": "9f6957dc-7595-41c0-a0be-14282b1fba5b",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9018653104601936
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.0644694397947777
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.024525168721129472
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.00561636128854374
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0035237197353552244
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9872874711313543
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.008351477121697023
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0031770306385827127
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.0007275526661588482
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0004564684422071753
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 15,
+      "turn": 16,
+      "at": "2026-10-06T06:33:40.861Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "BNP",
+      "value": "ELEVATED",
+      "previousValue": null,
+      "evidenceId": "9753ea1d-29dd-4098-ba24-c7c1e9af818f",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9872874711313543
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.008351477121697023
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0031770306385827127
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.0007275526661588482
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0004564684422071753
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9952536654353926
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.0031180975034796423
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0011861723570919783
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.0002716381927343277
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0001704265113012986
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 16,
+      "turn": 17,
+      "at": "2026-10-06T06:35:23.270Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "PRIOR_CHF_HISTORY",
+      "value": "ABSENT",
+      "previousValue": "PRESENT",
+      "evidenceId": "e5c73839-3904-4a3a-a3e0-b00c60cf5873",
+      "corrects": "a936a5fa-2bd2-4863-985a-a17a7715e0c3",
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9952536654353926
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.0031180975034796423
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0011861723570919783
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.0002716381927343277
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0001704265113012986
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9420926541848008
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.03804214556763903
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.014471818609407112
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.003314104083723416
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0020792775544298224
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 17,
+      "turn": 18,
+      "at": "2026-10-06T06:35:28.065Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "PRIOR_MI_HISTORY",
+      "value": "ABSENT",
+      "previousValue": "ABSENT",
+      "evidenceId": "aa108f15-dc55-4855-80db-1b13242264f2",
+      "corrects": "32740a9e-da75-47b3-9022-ed42bd1289de",
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9420926541848008
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.03804214556763903
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.014471818609407112
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.003314104083723416
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0020792775544298224
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9420926541848008
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.03804214556763903
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.014471818609407112
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.003314104083723416
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0020792775544298224
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 18,
+      "turn": 19,
+      "at": "2026-10-06T06:35:30.735Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "PAROXYSMAL_NOCTURNAL_DYSPNEA",
+      "value": "ABSENT",
+      "previousValue": "PRESENT",
+      "evidenceId": "fe48fdcb-bdfe-40ef-bac8-123ef288791a",
+      "corrects": "c18e4d9b-4c55-4814-ace9-0f756fe75ae8",
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9420926541848008
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.03804214556763903
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.014471818609407112
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.003314104083723416
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0020792775544298224
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.8061519138143786
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.12734821478808012
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.04844522403101907
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.01109414919654481
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.006960498169977335
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 19,
+      "turn": 20,
+      "at": "2026-10-06T06:35:57.604Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "ORTHOPNEA",
+      "value": "PRESENT",
+      "previousValue": "ABSENT",
+      "evidenceId": "a6417881-ed83-4fb2-92dc-8384c1bfbbed",
+      "corrects": "dd0c9286-9a50-48f5-8830-53d2caa84097",
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.8061519138143786
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.12734821478808012
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.04844522403101907
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.01109414919654481
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.006960498169977335
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9336673316983982
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.0435771487692169
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.01657741915166101
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.003796294991729816
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0023818053889936037
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 20,
+      "turn": 21,
+      "at": "2026-10-06T06:36:00.325Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "CAD_HISTORY",
+      "value": "PRESENT",
+      "previousValue": "ABSENT",
+      "evidenceId": "f7cf7ed9-4906-42f5-baa8-562aabc941ac",
+      "corrects": "d360fd33-e294-4c75-a937-5c6e6356387c",
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9336673316983982
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.0435771487692169
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.01657741915166101
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.003796294991729816
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0023818053889936037
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9738621888366203
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.017171196557168877
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.006532187871475152
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.0014958970316579492
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0009385297030774104
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 21,
+      "turn": 22,
+      "at": "2026-10-06T06:36:02.848Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "INITIAL_CLINICAL_JUDGMENT_CHF",
+      "value": "NOT_HIGH_SUSPICION",
+      "previousValue": "HIGH_SUSPICION",
+      "evidenceId": "c2294f7a-18d5-432b-990c-bbda0b53baf2",
+      "corrects": "132b0add-ed00-4680-a6ca-613d1337b281",
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.9738621888366203
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.017171196557168877
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.006532187871475152
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.0014958970316579492
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0009385297030774104
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.7921237365233942
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.1365640052036065
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.05195105277032295
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.011896997936938044
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.007464207565738493
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 22,
+      "turn": 23,
+      "at": "2026-10-06T06:36:06.204Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "PULMONARY_RALES",
+      "value": "PRESENT",
+      "previousValue": "ABSENT",
+      "evidenceId": "ab4f6968-abe6-46d3-a83c-6f5440d02ea7",
+      "corrects": "e83958cc-aea9-47c7-be34-08745ab49efb",
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.7921237365233942
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.1365640052036065
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.05195105277032295
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.011896997936938044
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.007464207565738493
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.8536494164523197
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.09614480036777036
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.036574964171937556
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.008375812425223722
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0052550065827490534
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 23,
+      "turn": 24,
+      "at": "2026-10-06T06:36:14.326Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "JUGULAR_VENOUS_DISTENSION",
+      "value": "ABSENT",
+      "previousValue": "PRESENT",
+      "evidenceId": "9f0740fa-1568-480c-9472-5c929b6fb46c",
+      "corrects": "9f6957dc-7595-41c0-a0be-14282b1fba5b",
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.8536494164523197
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.09614480036777036
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.036574964171937556
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.008375812425223722
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.0052550065827490534
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.6905326690916278
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.2033041073651645
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0773400164589793
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.017711171712401688
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.011112035371826484
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 24,
+      "turn": 25,
+      "at": "2026-10-06T06:36:18.604Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "BNP",
+      "value": "NEGATIVE",
+      "previousValue": "ELEVATED",
+      "evidenceId": "bdce8b2e-f356-4c1d-8c5e-34042e9dc1b3",
+      "corrects": "9753ea1d-29dd-4098-ba24-c7c1e9af818f",
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.6905326690916278
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.2033041073651645
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0773400164589793
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.017711171712401688
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.011112035371826484
+        }
+      ],
+      "after": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.6022038537841479
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.2290876292020608
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.08333175503148549
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.05246197924119571
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.03291478274110993
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 25,
+      "turn": 26,
+      "at": "2026-10-06T06:36:43.537Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "PRIOR_CHF_HISTORY",
+      "value": "PRESENT",
+      "previousValue": "ABSENT",
+      "evidenceId": "b1cb73aa-0ac0-498f-988e-170134ddd9c4",
+      "corrects": "e5c73839-3904-4a3a-a3e0-b00c60cf5873",
+      "before": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.6022038537841479
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.2290876292020608
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.08333175503148549
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.05246197924119571
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.03291478274110993
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.5395297506149676
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.30250525231419867
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.11507766122445101
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.026353242622968277
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.016534093223414363
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 26,
+      "turn": 27,
+      "at": "2026-10-06T06:37:38.732Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "PAIN_RADIATION_RIGHT_ARM_SHOULDER",
+      "value": "ABSENT",
+      "previousValue": null,
+      "evidenceId": "f1dff972-ea9a-4472-8421-a939a3f3ddee",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.5395297506149676
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.30250525231419867
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.11507766122445101
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.026353242622968277
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.016534093223414363
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.5483643792518008
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.30745867992748843
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.10058733844501411
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.02678476861701201
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.016804833758684475
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "UNSTABLE_ANGINA",
+          "citationId": "BRUYNINCKX_2008"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 27,
+      "turn": 28,
+      "at": "2026-10-06T06:37:56.345Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "CHEST_PAIN_PLEURITIC",
+      "value": "PRESENT",
+      "previousValue": null,
+      "evidenceId": "de025815-b765-4faa-8bc6-1fbf2ba5bd15",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.5483643792518008
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.30745867992748843
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.10058733844501411
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.02678476861701201
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.016804833758684475
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.5465275184334367
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.30642878297613046
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.10025040018315022
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.0266950474500962
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.020098250957186203
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "ACUTE_PERICARDITIS",
+          "citationId": "AFP_2024"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 28,
+      "turn": 29,
+      "at": "2026-10-06T06:37:59.363Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "THIRD_HEART_SOUND",
+      "value": "ABSENT",
+      "previousValue": null,
+      "evidenceId": "51ca6b01-ac1a-4b71-a778-8ed2c34d532b",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.5465275184334367
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.30642878297613046
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.10025040018315022
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.0266950474500962
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.020098250957186203
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.5146999377900107
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.32793590236725095
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.10728661037465358
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.028568675531259736
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.02150887393682508
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 29,
+      "turn": 30,
+      "at": "2026-10-06T06:38:01.493Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "ECG_ATRIAL_FIBRILLATION",
+      "value": "ABSENT",
+      "previousValue": null,
+      "evidenceId": "d8e74cfd-9483-4cef-a7a9-90ea413e1885",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.5146999377900107
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.32793590236725095
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.10728661037465358
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.028568675531259736
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.02150887393682508
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.4558885730988734
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.36767700164016287
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.12028819941316783
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03203078676149625
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.024115439086299477
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 30,
+      "turn": 31,
+      "at": "2026-10-06T06:38:02.572Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "ECG_NEW_T_WAVE_CHANGES",
+      "value": "ABSENT",
+      "previousValue": null,
+      "evidenceId": "84ebf2cd-cef3-443d-af3a-a4b34e0a5520",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.4558885730988734
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.36767700164016287
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.12028819941316783
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03203078676149625
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.024115439086299477
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.4466608437974901
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.3739125329555093
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.12232819873583829
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03257400532837839
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.024524419182784044
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 31,
+      "turn": 32,
+      "at": "2026-10-06T06:38:04.611Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "CHEST_PAIN_OPPRESSIVE_CHARACTER",
+      "value": "ABSENT",
+      "previousValue": null,
+      "evidenceId": "d0c42697-fa4f-428b-8d0d-41f258274711",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.4466608437974901
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.3739125329555093
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.12232819873583829
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03257400532837839
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.024524419182784044
+        }
+      ],
+      "after": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.46604436898157897
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.39013903478533074
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0842402989357793
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.033987603725007795
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.025588693572303114
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "UNSTABLE_ANGINA",
+          "citationId": "BRUYNINCKX_2008"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 32,
+      "turn": 33,
+      "at": "2026-10-06T06:38:06.115Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "CARDIAC_MURMUR",
+      "value": "ABSENT",
+      "previousValue": null,
+      "evidenceId": "62c1ad84-1005-4ad0-8f98-2e1ef4d68208",
+      "corrects": null,
+      "before": [
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.46604436898157897
+        },
+        {
+          "id": "UNKNOWN",
+          "probability": 0.39013903478533074
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0842402989357793
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.033987603725007795
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.025588693572303114
+        }
+      ],
+      "after": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.42804143157152863
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.4141700462693681
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0924243280919715
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03728953336377395
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.02807466070335813
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 33,
+      "turn": 34,
+      "at": "2026-10-06T06:38:07.931Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "LOWER_EXTREMITY_EDEMA",
+      "value": "ABSENT",
+      "previousValue": null,
+      "evidenceId": "c0c0ec03-2bfa-40ed-ad57-a05fb0d71c6e",
+      "corrects": null,
+      "before": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.42804143157152863
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.4141700462693681
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.0924243280919715
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03728953336377395
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.02807466070335813
+        }
+      ],
+      "after": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.44761336872668156
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.3873833237880277
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.09665037493603973
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03899457486141879
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.029358357687832275
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 34,
+      "turn": 35,
+      "at": "2026-10-06T06:38:09.158Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "ECG_ANY_ABNORMAL_FINDING",
+      "value": "ABSENT",
+      "previousValue": null,
+      "evidenceId": "fe69d609-345b-4fff-80a6-6fe3919638ff",
+      "corrects": null,
+      "before": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.44761336872668156
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.3873833237880277
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.09665037493603973
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03899457486141879
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.029358357687832275
+        }
+      ],
+      "after": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.4908072425528495
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.3282669316852175
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.10597695986828792
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.04275748022606543
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.03219138566757981
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "CONGESTIVE_HEART_FAILURE",
+          "citationId": "WANG_2005"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 35,
+      "turn": 36,
+      "at": "2026-10-06T06:38:10.181Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "REVISED_GENEVA_SCORE_CATEGORY",
+      "value": "INTERMEDIATE",
+      "previousValue": null,
+      "evidenceId": "379a792f-a63e-49b6-a1d0-a3c1ffec8769",
+      "corrects": null,
+      "before": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.4908072425528495
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.3282669316852175
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.10597695986828792
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.04275748022606543
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.03219138566757981
+        }
+      ],
+      "after": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.48033295096002304
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.32126140433221967
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.10371531113220149
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.06318594257925589
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.03150439099629995
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "PULMONARY_EMBOLISM",
+          "citationId": "KLOK_2008"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 36,
+      "turn": 37,
+      "at": "2026-10-06T06:38:11.130Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "WELLS_SCORE_CATEGORY",
+      "value": "INTERMEDIATE",
+      "previousValue": null,
+      "evidenceId": "34e98c79-d513-430b-9305-aadead5dbcff",
+      "corrects": null,
+      "before": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.48033295096002304
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.32126140433221967
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.10371531113220149
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.06318594257925589
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.03150439099629995
+        }
+      ],
+      "after": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.4628112361814551
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.3095423442826836
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.09993195607359733
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.09735929812746907
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.03035516533479501
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "PULMONARY_EMBOLISM",
+          "citationId": "RIGHINI_2006"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 37,
+      "turn": 38,
+      "at": "2026-10-06T06:38:35.992Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "WELLS_DICHOTOMIZED",
+      "value": "PE_LIKELY",
+      "previousValue": null,
+      "evidenceId": "0a596db2-a9bf-4019-9fcb-3bde1c6eaa1e",
+      "corrects": null,
+      "before": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.4628112361814551
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.3095423442826836
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.09993195607359733
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.09735929812746907
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.03035516533479501
+        }
+      ],
+      "after": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.4146877800022997
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.27735590135276234
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.19121654891611212
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.08954095703761122
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.02719881269121467
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "PULMONARY_EMBOLISM",
+          "citationId": "RIGHINI_2006"
+        }
+      ],
+      "note": null
+    },
+    {
+      "seq": 38,
+      "turn": 39,
+      "at": "2026-10-06T06:38:42.897Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "SIMPLIFIED_GENEVA_SCORE_CATEGORY",
+      "value": "HIGH",
+      "previousValue": null,
+      "evidenceId": "13a17a89-30b9-49ab-ac9f-0636af46897c",
+      "corrects": null,
+      "before": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.4146877800022997
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.27735590135276234
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.19121654891611212
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.08954095703761122
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.02719881269121467
+        }
+      ],
+      "after": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.39796383383863965
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.2661704134120005
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.22383398194949247
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.08592985920171331
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.02610191159815418
+        }
+      ],
+      "citations": [
+        {
+          "hypothesisId": "PULMONARY_EMBOLISM",
+          "citationId": "ROBERTEBADI_2017"
+        }
+      ],
+      "note": null
+    }
+  ]
+}

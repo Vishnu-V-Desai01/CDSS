@@ -1,0 +1,234 @@
+{
+  "metadata": {
+    "careSetting": "ED_UNDIFFERENTIATED_CHEST_PAIN",
+    "patientAge": 60,
+    "patientSex": "FEMALE",
+    "patientPregnancy": "POSTPARTUM_6WK",
+    "sessionId": "6d8a9786-f119-4e46-b6d1-88484703784f",
+    "createdAt": "2026-10-06T04:29:48.399Z"
+  },
+  "halted": true,
+  "haltReason": "HALT",
+  "haltRule": "RF-01",
+  "halt": {
+    "primaryRule": "RF-01",
+    "rules": [
+      {
+        "ruleId": "RF-01",
+        "displayName": "Haemodynamic Collapse",
+        "clinicalRationale": "Systolic BP < 90 mmHg with severe tachycardia (HR > 130) indicates cardiogenic shock or decompensation requiring immediate resuscitation over diagnostic workup. Applicable across all four candidate conditions at their most severe. Policy rule, not literature-derived — see RED_FLAGS_RATIONALE.md.\n",
+        "haltMessage": "Haemodynamic collapse detected. Differential diagnosis deferred. Initiate resuscitation: IV fluids, vasopressor support, urgent cardiology consultation.\n",
+        "triggers": [
+          {
+            "findingId": "SYSTOLIC_BLOOD_PRESSURE_CATEGORY",
+            "requiredState": "HYPOTENSIVE",
+            "description": "Systolic BP < 90 mmHg",
+            "observedState": "HYPOTENSIVE",
+            "matched": true,
+            "sourceEvidence": [
+              {
+                "evidenceId": "555cd57b-ff50-4b06-9579-39ea7f44a0ec",
+                "featureId": "VS_SBP"
+              }
+            ]
+          },
+          {
+            "findingId": "HEART_RATE_CATEGORY",
+            "requiredState": "SEVERE_TACHYCARDIA",
+            "description": "Heart rate > 130 bpm",
+            "observedState": "SEVERE_TACHYCARDIA",
+            "matched": true,
+            "sourceEvidence": [
+              {
+                "evidenceId": "306aaeb7-de38-4a50-a091-ce4ae8052b57",
+                "featureId": "VS_HEART_RATE"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "turn": 3,
+  "evidenceLog": [
+    {
+      "id": "306aaeb7-de38-4a50-a091-ce4ae8052b57",
+      "featureId": "VS_HEART_RATE",
+      "value": "145",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:30:39.925Z",
+      "observerConfidence": "HIGH",
+      "turn": 1,
+      "rawValue": 145
+    },
+    {
+      "id": "5c276044-5b44-4300-b97a-f899ac5b19e4",
+      "featureId": "VS_RESP_RATE",
+      "value": "18",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:30:39.958Z",
+      "observerConfidence": "HIGH",
+      "turn": 2,
+      "rawValue": 18
+    },
+    {
+      "id": "555cd57b-ff50-4b06-9579-39ea7f44a0ec",
+      "featureId": "VS_SBP",
+      "value": "95",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:30:39.985Z",
+      "observerConfidence": "HIGH",
+      "turn": 3,
+      "rawValue": 95
+    }
+  ],
+  "answeredEvidence": [
+    {
+      "evidenceId": "306aaeb7-de38-4a50-a091-ce4ae8052b57",
+      "featureId": "VS_HEART_RATE",
+      "value": "145",
+      "rawValue": 145,
+      "turn": 1,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "5c276044-5b44-4300-b97a-f899ac5b19e4",
+      "featureId": "VS_RESP_RATE",
+      "value": "18",
+      "rawValue": 18,
+      "turn": 2,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "555cd57b-ff50-4b06-9579-39ea7f44a0ec",
+      "featureId": "VS_SBP",
+      "value": "95",
+      "rawValue": 95,
+      "turn": 3,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    }
+  ],
+  "minimumSafetySet": {
+    "complete": false,
+    "missing": [
+      "VS_DBP",
+      "VS_SPO2_ROOM_AIR",
+      "VS_TEMPERATURE",
+      "EX_MENTAL_STATUS"
+    ]
+  },
+  "distribution": null,
+  "lastMovement": null,
+  "lastGateResult": {
+    "status": "HALT",
+    "firedRules": [
+      "RF-01"
+    ],
+    "unevaluableRules": [
+      {
+        "ruleId": "RF-02",
+        "missingFeatures": [
+          "SYNCOPE",
+          "OXYGEN_SATURATION_CATEGORY"
+        ]
+      },
+      {
+        "ruleId": "RF-03",
+        "missingFeatures": [
+          "ECG_ST_ELEVATION"
+        ]
+      },
+      {
+        "ruleId": "RF-04",
+        "missingFeatures": [
+          "ORTHOPNEA",
+          "PULMONARY_RALES",
+          "OXYGEN_SATURATION_CATEGORY"
+        ]
+      },
+      {
+        "ruleId": "RF-05",
+        "missingFeatures": [
+          "JVD",
+          "MUFFLED_HEART_SOUNDS"
+        ]
+      }
+    ],
+    "primaryRule": "RF-01"
+  },
+  "redFlagChecks": [],
+  "nextQuestion": null,
+  "deferredFeatureIds": [],
+  "pending": [],
+  "trace": [
+    {
+      "seq": 0,
+      "turn": 1,
+      "at": "2026-10-06T04:30:39.930Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_HEART_RATE",
+      "value": "145",
+      "previousValue": null,
+      "evidenceId": "306aaeb7-de38-4a50-a091-ce4ae8052b57",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 1,
+      "turn": 2,
+      "at": "2026-10-06T04:30:39.962Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_RESP_RATE",
+      "value": "18",
+      "previousValue": null,
+      "evidenceId": "5c276044-5b44-4300-b97a-f899ac5b19e4",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 2,
+      "turn": 3,
+      "at": "2026-10-06T04:30:39.992Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_SBP",
+      "value": "95",
+      "previousValue": null,
+      "evidenceId": "555cd57b-ff50-4b06-9579-39ea7f44a0ec",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 3,
+      "turn": 3,
+      "at": "2026-10-06T04:30:39.992Z",
+      "kind": "SESSION_HALTED",
+      "featureId": null,
+      "value": null,
+      "previousValue": null,
+      "evidenceId": null,
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": "RF-01 Haemodynamic Collapse: Haemodynamic collapse detected. Differential diagnosis deferred. Initiate resuscitation: IV fluids, vasopressor support, urgent cardiology consultation."
+    }
+  ]
+}

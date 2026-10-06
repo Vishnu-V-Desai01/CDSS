@@ -1,0 +1,569 @@
+{
+  "metadata": {
+    "careSetting": "ED_UNDIFFERENTIATED_CHEST_PAIN",
+    "patientAge": 60,
+    "patientSex": "FEMALE",
+    "patientPregnancy": "PREGNANT",
+    "sessionId": "a5dceb81-c3db-4a0d-bf16-14fa6baf28b7",
+    "createdAt": "2026-10-06T04:33:42.077Z"
+  },
+  "halted": true,
+  "haltReason": "HALT",
+  "haltRule": "RF-03",
+  "halt": {
+    "primaryRule": "RF-03",
+    "rules": [
+      {
+        "ruleId": "RF-03",
+        "displayName": "Acute ST-Elevation MI",
+        "clinicalRationale": "ST elevation on ECG indicates acute transmural infarction requiring emergency reperfusion (PCI or thrombolysis). This single finding alone is sufficient to halt — no further workup should delay reperfusion.\n",
+        "haltMessage": "Acute ST-elevation MI detected. Differential diagnosis deferred. Activate STEMI protocol: urgent cardiology, reperfusion therapy (PCI or thrombolysis).\n",
+        "triggers": [
+          {
+            "findingId": "ECG_ST_ELEVATION",
+            "requiredState": "PRESENT",
+            "description": "ST elevation ≥1mm in contiguous leads",
+            "observedState": "PRESENT",
+            "matched": true,
+            "sourceEvidence": [
+              {
+                "evidenceId": "862fde2d-4a4e-45a1-bbd4-ac58c4e7ec0d",
+                "featureId": "ECG_ST_ELEVATION"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "turn": 11,
+  "evidenceLog": [
+    {
+      "id": "74a9f885-2f3b-4764-9582-f14276d6fa83",
+      "featureId": "VS_HEART_RATE",
+      "value": "145",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:34:23.414Z",
+      "observerConfidence": "HIGH",
+      "turn": 1,
+      "rawValue": 145
+    },
+    {
+      "id": "eb6a22e0-18d5-4ec3-b20c-7a0269b82493",
+      "featureId": "VS_RESP_RATE",
+      "value": "18",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:34:23.443Z",
+      "observerConfidence": "HIGH",
+      "turn": 2,
+      "rawValue": 18
+    },
+    {
+      "id": "f63a7de1-db6d-424e-a97e-d877eb51223a",
+      "featureId": "VS_SBP",
+      "value": "84",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:34:23.470Z",
+      "observerConfidence": "HIGH",
+      "turn": 3,
+      "rawValue": 84
+    },
+    {
+      "id": "5fce5592-d8d2-4321-a73c-54bf7263a0d2",
+      "featureId": "VS_SBP",
+      "value": "90",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:34:31.265Z",
+      "observerConfidence": "HIGH",
+      "turn": 4,
+      "corrects": "f63a7de1-db6d-424e-a97e-d877eb51223a",
+      "rawValue": 90
+    },
+    {
+      "id": "2fb6c71c-4441-4c43-82b9-9ac29554e3d0",
+      "featureId": "VS_SBP",
+      "value": "91",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:34:39.010Z",
+      "observerConfidence": "HIGH",
+      "turn": 5,
+      "corrects": "5fce5592-d8d2-4321-a73c-54bf7263a0d2",
+      "rawValue": 91
+    },
+    {
+      "id": "9be79116-e526-48d5-ab1e-a765172f3a3c",
+      "featureId": "VS_SBP",
+      "value": "128",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:35:00.957Z",
+      "observerConfidence": "HIGH",
+      "turn": 6,
+      "corrects": "2fb6c71c-4441-4c43-82b9-9ac29554e3d0",
+      "rawValue": 128
+    },
+    {
+      "id": "ea779944-888e-4b11-9a02-88f7c9908e82",
+      "featureId": "VS_DBP",
+      "value": "50",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:35:13.964Z",
+      "observerConfidence": "HIGH",
+      "turn": 7,
+      "rawValue": 50
+    },
+    {
+      "id": "bee28f6d-8323-4fcc-b55e-0ba325b72e4b",
+      "featureId": "VS_SPO2_ROOM_AIR",
+      "value": "97",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:35:13.993Z",
+      "observerConfidence": "HIGH",
+      "turn": 8,
+      "rawValue": 97
+    },
+    {
+      "id": "ace36cb3-9bb9-436d-8e9b-8a1871364103",
+      "featureId": "VS_TEMPERATURE",
+      "value": "36",
+      "source": "MEASURED",
+      "observedAt": "2026-10-06T04:35:14.011Z",
+      "observerConfidence": "HIGH",
+      "turn": 9,
+      "rawValue": 36
+    },
+    {
+      "id": "d085c71f-a982-4654-a007-e2258af13200",
+      "featureId": "EX_MENTAL_STATUS",
+      "value": "ALERT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T04:35:14.028Z",
+      "observerConfidence": "HIGH",
+      "turn": 10
+    },
+    {
+      "id": "862fde2d-4a4e-45a1-bbd4-ac58c4e7ec0d",
+      "featureId": "ECG_ST_ELEVATION",
+      "value": "PRESENT",
+      "source": "OBSERVED",
+      "observedAt": "2026-10-06T04:35:59.186Z",
+      "observerConfidence": "HIGH",
+      "turn": 11
+    }
+  ],
+  "answeredEvidence": [
+    {
+      "evidenceId": "74a9f885-2f3b-4764-9582-f14276d6fa83",
+      "featureId": "VS_HEART_RATE",
+      "value": "145",
+      "rawValue": 145,
+      "turn": 1,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "eb6a22e0-18d5-4ec3-b20c-7a0269b82493",
+      "featureId": "VS_RESP_RATE",
+      "value": "18",
+      "rawValue": 18,
+      "turn": 2,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "9be79116-e526-48d5-ab1e-a765172f3a3c",
+      "featureId": "VS_SBP",
+      "value": "128",
+      "rawValue": 128,
+      "turn": 6,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "ea779944-888e-4b11-9a02-88f7c9908e82",
+      "featureId": "VS_DBP",
+      "value": "50",
+      "rawValue": 50,
+      "turn": 7,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "bee28f6d-8323-4fcc-b55e-0ba325b72e4b",
+      "featureId": "VS_SPO2_ROOM_AIR",
+      "value": "97",
+      "rawValue": 97,
+      "turn": 8,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "ace36cb3-9bb9-436d-8e9b-8a1871364103",
+      "featureId": "VS_TEMPERATURE",
+      "value": "36",
+      "rawValue": 36,
+      "turn": 9,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "d085c71f-a982-4654-a007-e2258af13200",
+      "featureId": "EX_MENTAL_STATUS",
+      "value": "ALERT",
+      "rawValue": null,
+      "turn": 10,
+      "isVital": true,
+      "prompt": null,
+      "stateValues": null,
+      "tier": null
+    },
+    {
+      "evidenceId": "862fde2d-4a4e-45a1-bbd4-ac58c4e7ec0d",
+      "featureId": "ECG_ST_ELEVATION",
+      "value": "PRESENT",
+      "rawValue": null,
+      "turn": 11,
+      "isVital": false,
+      "prompt": "ST elevation ≥1mm in contiguous leads on ECG?",
+      "stateValues": [
+        "PRESENT",
+        "ABSENT"
+      ],
+      "tier": "BEDSIDE"
+    }
+  ],
+  "minimumSafetySet": {
+    "complete": true,
+    "missing": []
+  },
+  "distribution": null,
+  "lastMovement": null,
+  "lastGateResult": {
+    "status": "HALT",
+    "firedRules": [
+      "RF-03"
+    ],
+    "unevaluableRules": [
+      {
+        "ruleId": "RF-02",
+        "missingFeatures": [
+          "SYNCOPE"
+        ]
+      },
+      {
+        "ruleId": "RF-04",
+        "missingFeatures": [
+          "ORTHOPNEA",
+          "PULMONARY_RALES"
+        ]
+      },
+      {
+        "ruleId": "RF-05",
+        "missingFeatures": [
+          "JVD",
+          "MUFFLED_HEART_SOUNDS"
+        ]
+      }
+    ],
+    "primaryRule": "RF-03"
+  },
+  "redFlagChecks": [],
+  "nextQuestion": null,
+  "deferredFeatureIds": [],
+  "pending": [],
+  "trace": [
+    {
+      "seq": 0,
+      "turn": 1,
+      "at": "2026-10-06T04:34:23.431Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_HEART_RATE",
+      "value": "145",
+      "previousValue": null,
+      "evidenceId": "74a9f885-2f3b-4764-9582-f14276d6fa83",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 1,
+      "turn": 2,
+      "at": "2026-10-06T04:34:23.452Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_RESP_RATE",
+      "value": "18",
+      "previousValue": null,
+      "evidenceId": "eb6a22e0-18d5-4ec3-b20c-7a0269b82493",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 2,
+      "turn": 3,
+      "at": "2026-10-06T04:34:23.482Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_SBP",
+      "value": "84",
+      "previousValue": null,
+      "evidenceId": "f63a7de1-db6d-424e-a97e-d877eb51223a",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 3,
+      "turn": 3,
+      "at": "2026-10-06T04:34:23.482Z",
+      "kind": "SESSION_HALTED",
+      "featureId": null,
+      "value": null,
+      "previousValue": null,
+      "evidenceId": null,
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": "RF-01 Haemodynamic Collapse: Haemodynamic collapse detected. Differential diagnosis deferred. Initiate resuscitation: IV fluids, vasopressor support, urgent cardiology consultation."
+    },
+    {
+      "seq": 4,
+      "turn": 4,
+      "at": "2026-10-06T04:34:31.273Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "VS_SBP",
+      "value": "90",
+      "previousValue": "84",
+      "evidenceId": "5fce5592-d8d2-4321-a73c-54bf7263a0d2",
+      "corrects": "f63a7de1-db6d-424e-a97e-d877eb51223a",
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 5,
+      "turn": 4,
+      "at": "2026-10-06T04:34:31.273Z",
+      "kind": "SESSION_HALTED",
+      "featureId": null,
+      "value": null,
+      "previousValue": null,
+      "evidenceId": null,
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": "RF-01 Haemodynamic Collapse: Haemodynamic collapse detected. Differential diagnosis deferred. Initiate resuscitation: IV fluids, vasopressor support, urgent cardiology consultation."
+    },
+    {
+      "seq": 6,
+      "turn": 5,
+      "at": "2026-10-06T04:34:39.017Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "VS_SBP",
+      "value": "91",
+      "previousValue": "90",
+      "evidenceId": "2fb6c71c-4441-4c43-82b9-9ac29554e3d0",
+      "corrects": "5fce5592-d8d2-4321-a73c-54bf7263a0d2",
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 7,
+      "turn": 5,
+      "at": "2026-10-06T04:34:39.017Z",
+      "kind": "SESSION_HALTED",
+      "featureId": null,
+      "value": null,
+      "previousValue": null,
+      "evidenceId": null,
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": "RF-01 Haemodynamic Collapse: Haemodynamic collapse detected. Differential diagnosis deferred. Initiate resuscitation: IV fluids, vasopressor support, urgent cardiology consultation."
+    },
+    {
+      "seq": 8,
+      "turn": 6,
+      "at": "2026-10-06T04:35:00.970Z",
+      "kind": "EVIDENCE_CORRECTED",
+      "featureId": "VS_SBP",
+      "value": "128",
+      "previousValue": "91",
+      "evidenceId": "9be79116-e526-48d5-ab1e-a765172f3a3c",
+      "corrects": "2fb6c71c-4441-4c43-82b9-9ac29554e3d0",
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 9,
+      "turn": 6,
+      "at": "2026-10-06T04:35:00.970Z",
+      "kind": "HALT_CLEARED",
+      "featureId": null,
+      "value": null,
+      "previousValue": null,
+      "evidenceId": null,
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": "Corrected evidence no longer fires any red-flag rule."
+    },
+    {
+      "seq": 10,
+      "turn": 7,
+      "at": "2026-10-06T04:35:13.970Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_DBP",
+      "value": "50",
+      "previousValue": null,
+      "evidenceId": "ea779944-888e-4b11-9a02-88f7c9908e82",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 11,
+      "turn": 8,
+      "at": "2026-10-06T04:35:13.995Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_SPO2_ROOM_AIR",
+      "value": "97",
+      "previousValue": null,
+      "evidenceId": "bee28f6d-8323-4fcc-b55e-0ba325b72e4b",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 12,
+      "turn": 9,
+      "at": "2026-10-06T04:35:14.015Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "VS_TEMPERATURE",
+      "value": "36",
+      "previousValue": null,
+      "evidenceId": "ace36cb3-9bb9-436d-8e9b-8a1871364103",
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 13,
+      "turn": 10,
+      "at": "2026-10-06T04:35:14.053Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "EX_MENTAL_STATUS",
+      "value": "ALERT",
+      "previousValue": null,
+      "evidenceId": "d085c71f-a982-4654-a007-e2258af13200",
+      "corrects": null,
+      "before": null,
+      "after": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.43016638662953677
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.3452053416823804
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.1636419246674235
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03747465231882742
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.02351169470183189
+        }
+      ],
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 14,
+      "turn": 11,
+      "at": "2026-10-06T04:35:59.191Z",
+      "kind": "EVIDENCE_ADDED",
+      "featureId": "ECG_ST_ELEVATION",
+      "value": "PRESENT",
+      "previousValue": null,
+      "evidenceId": "862fde2d-4a4e-45a1-bbd4-ac58c4e7ec0d",
+      "corrects": null,
+      "before": [
+        {
+          "id": "UNKNOWN",
+          "probability": 0.43016638662953677
+        },
+        {
+          "id": "CONGESTIVE_HEART_FAILURE",
+          "probability": 0.3452053416823804
+        },
+        {
+          "id": "UNSTABLE_ANGINA",
+          "probability": 0.1636419246674235
+        },
+        {
+          "id": "PULMONARY_EMBOLISM",
+          "probability": 0.03747465231882742
+        },
+        {
+          "id": "ACUTE_PERICARDITIS",
+          "probability": 0.02351169470183189
+        }
+      ],
+      "after": null,
+      "citations": [],
+      "note": null
+    },
+    {
+      "seq": 15,
+      "turn": 11,
+      "at": "2026-10-06T04:35:59.191Z",
+      "kind": "SESSION_HALTED",
+      "featureId": null,
+      "value": null,
+      "previousValue": null,
+      "evidenceId": null,
+      "corrects": null,
+      "before": null,
+      "after": null,
+      "citations": [],
+      "note": "RF-03 Acute ST-Elevation MI: Acute ST-elevation MI detected. Differential diagnosis deferred. Activate STEMI protocol: urgent cardiology, reperfusion therapy (PCI or thrombolysis)."
+    }
+  ]
+}

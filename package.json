@@ -1,24 +1,33 @@
 {
-  "name": "cardiac-cds",
-  "private": true,
-  "version": "0.1.0",
-  "description": "Cardiovascular clinical decision support — foundation per CDS-CV-FOUNDATION-SPEC-v1.0",
-  "workspaces": [
-    "packages/schema",
-    "packages/shared-types",
-    "packages/knowledge-pack-builder",
-    "packages/engine",
-    "packages/api"
-  ],
-  "scripts": {
-    "build": "npm run build --workspaces --if-present",
-    "test": "npm run test --workspaces --if-present",
-    "pack:build": "npm run build --workspace=@cds/knowledge-pack-builder && node packages/knowledge-pack-builder/dist/cli.js build packages/knowledge-packs/cv-v1 --out packages/knowledge-packs/cv-v1/dist",
-    "pack:validate": "npm run build --workspace=@cds/knowledge-pack-builder && node packages/knowledge-pack-builder/dist/cli.js validate packages/knowledge-packs/cv-v1"
-  },
-  "devDependencies": {
-    "typescript": "^5.5.4",
-    "vitest": "^2.0.5",
-    "@types/node": "^22.5.0"
-  }
+    "name":  "cardiac-cds",
+    "private":  true,
+    "version":  "0.1.0",
+    "description":  "Cardiovascular clinical decision support â€” foundation per CDS-CV-FOUNDATION-SPEC-v1.0",
+    "type":  "module",
+    "workspaces":  [
+                       "packages/schema",
+                       "packages/shared-types",
+                       "packages/knowledge-pack-builder",
+                       "packages/engine",
+                       "packages/safety-gate",
+                       "packages/session-store",
+                       "packages/api",
+                       "packages/web"
+                   ],
+    "scripts":  {
+                    "build":  "npm run build --workspaces --if-present",
+                    "test":  "npm run test --workspaces --if-present",
+                    "pack:build":  "npm run build --workspace=@cds/knowledge-pack-builder \u0026\u0026 node packages/knowledge-pack-builder/dist/cli.js build packages/knowledge-packs/cv-v1 --out packages/knowledge-packs/cv-v1/dist",
+                    "pack:validate":  "npm run build --workspace=@cds/knowledge-pack-builder \u0026\u0026 node packages/knowledge-pack-builder/dist/cli.js validate packages/knowledge-packs/cv-v1"
+                },
+    "engines":  {
+                    "node":  "\u003e=18.0.0",
+                    "npm":  "\u003e=8.0.0"
+                },
+    "devDependencies":  {
+                            "@types/node":  "^22.5.0",
+                            "typescript":  "^5.5.4",
+                            "vitest":  "^2.0.5"
+                        }
+    
 }

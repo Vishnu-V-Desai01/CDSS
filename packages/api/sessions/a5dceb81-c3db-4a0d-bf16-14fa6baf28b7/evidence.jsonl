@@ -1,0 +1,11 @@
+{"id":"74a9f885-2f3b-4764-9582-f14276d6fa83","featureId":"VS_HEART_RATE","value":"145","source":"MEASURED","observedAt":"2026-10-06T04:34:23.414Z","observerConfidence":"HIGH","turn":1,"rawValue":145}
+{"id":"eb6a22e0-18d5-4ec3-b20c-7a0269b82493","featureId":"VS_RESP_RATE","value":"18","source":"MEASURED","observedAt":"2026-10-06T04:34:23.443Z","observerConfidence":"HIGH","turn":2,"rawValue":18}
+{"id":"f63a7de1-db6d-424e-a97e-d877eb51223a","featureId":"VS_SBP","value":"84","source":"MEASURED","observedAt":"2026-10-06T04:34:23.470Z","observerConfidence":"HIGH","turn":3,"rawValue":84}
+{"id":"5fce5592-d8d2-4321-a73c-54bf7263a0d2","featureId":"VS_SBP","value":"90","source":"MEASURED","observedAt":"2026-10-06T04:34:31.265Z","observerConfidence":"HIGH","turn":4,"corrects":"f63a7de1-db6d-424e-a97e-d877eb51223a","rawValue":90}
+{"id":"2fb6c71c-4441-4c43-82b9-9ac29554e3d0","featureId":"VS_SBP","value":"91","source":"MEASURED","observedAt":"2026-10-06T04:34:39.010Z","observerConfidence":"HIGH","turn":5,"corrects":"5fce5592-d8d2-4321-a73c-54bf7263a0d2","rawValue":91}
+{"id":"9be79116-e526-48d5-ab1e-a765172f3a3c","featureId":"VS_SBP","value":"128","source":"MEASURED","observedAt":"2026-10-06T04:35:00.957Z","observerConfidence":"HIGH","turn":6,"corrects":"2fb6c71c-4441-4c43-82b9-9ac29554e3d0","rawValue":128}
+{"id":"ea779944-888e-4b11-9a02-88f7c9908e82","featureId":"VS_DBP","value":"50","source":"MEASURED","observedAt":"2026-10-06T04:35:13.964Z","observerConfidence":"HIGH","turn":7,"rawValue":50}
+{"id":"bee28f6d-8323-4fcc-b55e-0ba325b72e4b","featureId":"VS_SPO2_ROOM_AIR","value":"97","source":"MEASURED","observedAt":"2026-10-06T04:35:13.993Z","observerConfidence":"HIGH","turn":8,"rawValue":97}
+{"id":"ace36cb3-9bb9-436d-8e9b-8a1871364103","featureId":"VS_TEMPERATURE","value":"36","source":"MEASURED","observedAt":"2026-10-06T04:35:14.011Z","observerConfidence":"HIGH","turn":9,"rawValue":36}
+{"id":"d085c71f-a982-4654-a007-e2258af13200","featureId":"EX_MENTAL_STATUS","value":"ALERT","source":"OBSERVED","observedAt":"2026-10-06T04:35:14.028Z","observerConfidence":"HIGH","turn":10}
+{"id":"862fde2d-4a4e-45a1-bbd4-ac58c4e7ec0d","featureId":"ECG_ST_ELEVATION","value":"PRESENT","source":"OBSERVED","observedAt":"2026-10-06T04:35:59.186Z","observerConfidence":"HIGH","turn":11}

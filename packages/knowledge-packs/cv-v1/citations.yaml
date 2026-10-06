@@ -1,83 +1,277 @@
-CIT-PE-PRIOR-01:
+KLINE_2008:
   type: PRIMARY_STUDY
-  title: "Placeholder — ED chest pain PE prevalence"
-  authors: "TBD"
-  year: 2020
-  evidence_grade: D
-  table_or_figure: "TBD"
-  extracted_by: "chat0"
-  extracted_on: "2026-08-07"
-  checked_by: null
-  notes: "Placeholder value pending clinical lead verification, see spec §0.3."
-
-CIT-PE-PRIOR-02:
-  type: PRIMARY_STUDY
-  title: "Placeholder — primary care chest pain PE prevalence"
-  authors: "TBD"
-  year: 2020
-  evidence_grade: D
-  table_or_figure: "TBD"
-  extracted_by: "chat0"
-  extracted_on: "2026-08-07"
-  checked_by: null
-  notes: "Placeholder value pending clinical lead verification, see spec §0.3."
-
-CIT-PE-VTE-01:
-  type: PRIMARY_STUDY
-  title: "Placeholder — prior VTE as a risk factor for PE"
-  authors: "TBD"
-  year: 2020
-  evidence_grade: D
-  table_or_figure: "TBD"
-  extracted_by: "chat0"
-  extracted_on: "2026-08-07"
-  checked_by: null
-  notes: "Placeholder value pending clinical lead verification."
-
-CIT-PE-VS-01:
-  type: PRIMARY_STUDY
-  title: "Placeholder — heart rate bands in PE"
-  authors: "TBD"
-  year: 2020
-  evidence_grade: D
-  table_or_figure: "TBD"
-  extracted_by: "chat0"
-  extracted_on: "2026-08-07"
-  checked_by: null
-  notes: "Placeholder value pending clinical lead verification."
-
-CIT-PE-VS-02:
-  type: PRIMARY_STUDY
-  title: "Placeholder — SpO2 bands in PE"
-  authors: "TBD"
-  year: 2020
-  evidence_grade: D
-  table_or_figure: "TBD"
-  extracted_by: "chat0"
-  extracted_on: "2026-08-07"
-  checked_by: null
-  notes: "Placeholder value pending clinical lead verification."
-
-CIT-PE-WELLS-03:
-  type: PRIMARY_STUDY
-  title: "Placeholder — Wells criteria derivation cohort, unilateral leg swelling"
-  authors: "TBD"
-  year: 2001
-  evidence_grade: B
-  table_or_figure: "Table 2, derivation cohort"
-  extracted_by: "chat0"
-  extracted_on: "2026-08-07"
-  checked_by: null
-  notes: "Placeholder value pending clinical lead verification. Derivation cohort only."
-
-CIT-PE-DDIMER-01:
-  type: SYSTEMATIC_REVIEW
-  title: "Placeholder — high-sensitivity D-dimer meta-analysis"
-  authors: "TBD"
-  year: 2021
+  title: "Prospective multicenter evaluation of the pulmonary embolism rule-out criteria"
+  authors: "Kline JA, Courtney DM, Kabrhel C, Moore CL, Smithline HA, Plewa MC, Richman PB, O'Neil BJ, Nordenholz K"
+  year: 2008
+  doi: "10.1111/j.1538-7836.2008.02944.x"
   evidence_grade: A
-  table_or_figure: "TBD"
-  extracted_by: "chat0"
-  extracted_on: "2026-08-07"
+  table_or_figure: "Results section (PERC-negative sens/spec/LR-), Table 5"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
   checked_by: null
-  notes: "Placeholder value pending clinical lead verification."
+  notes: "Prospective, 13-site, N=8138. PERC-negative alone: sens 95.7% (93.6-97.2), spec 25.4% (24.4-26.4), LR- 0.17 (0.11-0.25) as reported directly in text. Baseline PE prevalence in cohort 561/8138 (6.9%) used as prior — NOTE: this is a suspected-PE cohort, not a fully undifferentiated ED chest pain/dyspnea population. Flagged as denominator limitation."
+
+KLINE_2004:
+  type: PRIMARY_STUDY
+  title: "Clinical criteria to prevent unnecessary diagnostic testing in emergency department patients with suspected pulmonary embolism"
+  authors: "Kline JA, Mitchell AM, Kabrhel C, Richman PB, Courtney DM"
+  year: 2004
+  doi: "TO_VERIFY"
+  evidence_grade: A
+  table_or_figure: "Derivation of PERC rule; Table 1 (logistic regression)"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: "Background/derivation source only. Not used for LR values in this file — RP_1 (Kline 2008) used instead as it reports directly usable sens/spec for the finalized rule in a larger prospective cohort. Individual PERC component odds ratios available here (Table 2) if item-level extraction needed later."
+
+RIGHINI_2006:
+  type: PRIMARY_STUDY
+  title: "Clinical probability assessment of pulmonary embolism by the Wells' score: is the easiest the best?"
+  authors: "Righini M, Le Gal G, Perrier A, Bounameaux H"
+  year: 2006
+  doi: "TO_VERIFY"
+  evidence_grade: B
+  table_or_figure: "Table 1 (proportion of patients and PE incidence by Wells category, original and dichotomized)"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: "N=922, retrospective computation of Wells score from Christopher study database (suspected-PE outpatient cohort). Sensitivity/specificity for each Wells category computed by Claude from raw counts in Table 1 (not directly reported by authors as sens/spec — see extraction notes)."
+
+KLOK_2008:
+  type: PRIMARY_STUDY
+  title: "Comparison of the revised Geneva score with the Wells rule for assessing clinical probability of pulmonary embolism"
+  authors: "Klok FA, Kruisman E, Spaan J, Nijkeuter M, Righini M, Aujesky D, Roy PM, Perrier A, Le Gal G, Huisman MV"
+  year: 2008
+  doi: "TO_VERIFY"
+  evidence_grade: B
+  table_or_figure: "Table 3, 'Validation set Leiden' column (Revised Geneva Score)"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: "N=300, single-center, RGS assessed retrospectively but patients followed prospectively. Sensitivity/specificity per category computed by Claude from raw counts."
+
+ROBERTEBADI_2017:
+  type: PRIMARY_STUDY
+  title: "Assessing clinical probability of pulmonary embolism: prospective validation of the simplified Geneva score"
+  authors: "Robert-Ebadi H, Mostaguir K, Hovens MM, Kare M, Verschuren F, Girard P, Huisman MV, Moustafa F, Kamphuisen PW, Buller HR, Righini M, Le Gal G"
+  year: 2017
+  doi: "10.1111/jth.13770"
+  evidence_grade: A
+  table_or_figure: "Table 3 (SGS classification vs confirmed PE)"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: "N=1621, prospective multicenter management outcome study (ADJUST-PE), outpatients. Strongest-quality Geneva-family source (largest N, prospective, multinational). Sensitivity/specificity per category computed by Claude from raw counts in Table 3."
+
+DINISIO_2007:
+  type: SYSTEMATIC_REVIEW
+  title: "Diagnostic accuracy of D-dimer test for exclusion of venous thromboembolism: a systematic review"
+  authors: "Di Nisio M, Squizzato A, Rutjes AWS, Buller HR, Zwinderman AH, Bossuyt PMM"
+  year: 2007
+  doi: "TO_VERIFY"
+  evidence_grade: A
+  table_or_figure: "Table 5 (adjusted summary sensitivity/specificity by assay, PE column)"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: "Meta-analysis, 81 studies / 111 PE test evaluations. Sensitivity/specificity are bivariate-model-adjusted estimates, NOT raw pooled — adjustment corrects for study design heterogeneity per paper's methods. Comparator population is mixed suspected-VTE cohorts, not undifferentiated presentations."
+
+WELLS_2000:
+  type: PRIMARY_STUDY
+  title: "Derivation of a simple clinical model to categorize patients probability of pulmonary embolism: increasing the model's utility with the SimpliRED D-dimer"
+  authors: "Wells PS, Anderson DR, Rodger M, Ginsberg JS, Kearon C, Gent M, Turpie AGG, Bormanis J, Weitz J, Chamberlain M, Bowie D, Barnes D, Hirsh J"
+  year: 2000
+  doi: "TO_VERIFY"
+  evidence_grade: A
+  table_or_figure: "Table 1 (univariate/multivariate regression, individual items)"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: "PENDING — NOT YET USED FOR ANY LR IN THIS FILE. Reports regression coefficients/odds ratios for items composing the Wells score, not clean finding-level 2x2 tables."
+
+KEARON_2014:
+  type: GUIDELINE
+  title: "Duration of anticoagulant therapy for deep vein thrombosis and pulmonary embolism"
+  authors: "Kearon C, Akl EA"
+  year: 2014
+  doi: "10.1182/blood-2013-12-512681"
+  evidence_grade: A
+  table_or_figure: "N/A — narrative guidance, Table 1 (recurrence risk)"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: "Not used for diagnostic LRs. Retained for red-flag/severity context."
+
+MCGINN_2008:
+  type: EXPERT_CONSENSUS
+  title: "Tips for Teachers of Evidence-based Medicine: Clinical Prediction Rules (CPRs) and Estimating Pretest Probability"
+  authors: "McGinn T, Jervis R, Wisnivesky J, Keitz S, Wyer PC"
+  year: 2008
+  doi: "10.1007/s11606-008-0623-z"
+  evidence_grade: D
+  table_or_figure: "N/A"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: "Teaching article, not a data source. NOT used for any LR."
+
+WANG_2005:
+  type: SYSTEMATIC_REVIEW
+  title: "Does This Dyspneic Patient in the Emergency Department Have Congestive Heart Failure?"
+  authors: "Wang CS, FitzGerald JM, Schulzer M, Mak E, Ayas NT"
+  year: 2005
+  doi: "TO_VERIFY"
+  evidence_grade: A
+  table_or_figure: "Table 3 (history/physical exam), Table 4 (CXR/ECG), Table 5 (BNP)"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: >
+    Rational Clinical Examination series, JAMA. Meta-analysis of 18 studies (of 22
+    identified), levels 1-3 quality only. Reports sensitivity, specificity, and LR
+    as SEPARATELY pooled random-effects parameters (bivariate model, delta method)
+    -- NOT derived from a single 2x2 table. This means LR = sens/(1-spec) does not
+    always hold exactly for the reported point estimates, since specificity is
+    rounded to 2 significant figures in the paper. For S3 gallop, CXR pulmonary
+    venous congestion, and CXR interstitial edema, specificity was refined to more
+    decimal places by back-solving from the paper's own reported LR and sensitivity
+    (not invented -- both source values are from the same table) to satisfy the
+    schema's tolerance check. See per-state notes in condition file.
+    Population: adult ED patients with undifferentiated dyspnea, levels 1-3 studies,
+    total N varies by finding (contributing study count noted per finding, not
+    pooled patient N, which the paper does not report as a single figure).
+
+MCCULLOUGH_2002:
+  type: PRIMARY_STUDY
+  title: "B-Type Natriuretic Peptide and Clinical Judgment in Emergency Diagnosis of Heart Failure: Analysis From Breathing Not Properly (BNP) Multinational Study"
+  authors: "McCullough PA, Nowak RM, McCord J, Hollander JE, Herrmann HC, Steg PG, Duc P, Westheim A, Omland T, Knudsen CW, Storrow AB, Abraham WT, Lamba S, Wu AHB, Perez A, Clopton P, Krishnaswamy P, Kazanegra R, Maisel AS"
+  year: 2002
+  doi: "10.1161/01.CIR.0000025242.79963.4C"
+  evidence_grade: A
+  table_or_figure: "Results section (decision statistics); Table 1 (baseline characteristics)"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: >
+    Prospective, 7-center, N=1538 (of 1586 screened). Consecutive ED patients
+    with primary complaint of dyspnea -- genuinely undifferentiated population,
+    NOT pre-selected for suspected CHF. Final CHF prevalence 722/1538 (46.9%).
+    Used as prior_probabilities source -- best denominator match found across
+    this entire project so far (contrast with PE's suspected-PE cohort problem).
+    Also reports BNP>=100 pg/mL: sens 90%, spec 73%, LR+ 3.4; and clinical
+    judgment >=80% certainty: sens 49%, spec 96%, LR+ 11.5 -- both single-study,
+    used as secondary/supporting figures; Wang 2005's pooled meta-analytic BNP
+    estimate (sens 93%, spec 66%, LR+ 2.7) used as primary in condition file
+    since it's a larger evidence base.
+
+BAYESGENIS_2023:
+  type: GUIDELINE
+  title: "Practical algorithms for early diagnosis of heart failure and heart stress using NT-proBNP: A clinical consensus statement from the Heart Failure Association of the ESC"
+  authors: "Bayes-Genis A, Docherty KF, Petrie MC, et al."
+  year: 2023
+  doi: "10.1002/ejhf.3036"
+  evidence_grade: B
+  table_or_figure: "Figure 1 (ED algorithm), Table 1 (age/sex cutpoints)"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: >
+    NOT USED FOR ANY LR IN THIS FILE. Consensus statement giving NT-proBNP
+    cutpoints (rule-out <=300 pg/mL, age-adjusted rule-in) but does NOT report
+    sensitivity/specificity for these exact cutpoints in the text extracted --
+    it cites the ICON study (Januzzi 2006) and ICON-RELOADED (Januzzi 2018) as
+    the primary derivation sources. Per project rule, no LR enters the file
+    without derived_from sens/spec from an OPENED source; this consensus paper
+    alone cannot supply that. Retained as a citation for future NT-proBNP
+    feature once ICON/ICON-RELOADED primary papers are sourced. BNP (not
+    NT-proBNP) is used instead in this file via Wang 2005 and McCullough 2002,
+    which do have full 2x2 derivation.
+
+BRUYNINCKX_2008:
+  type: SYSTEMATIC_REVIEW
+  title: "Signs and symptoms in diagnosing acute myocardial infarction and acute coronary syndrome: a diagnostic meta-analysis"
+  authors: "Bruyninckx R, Aertgeerts B, Bruyninckx P, Buntinx F"
+  year: 2008
+  doi: "10.3399/bjgp08X277014"
+  evidence_grade: B
+  table_or_figure: "Appendix 6 (pooled sens/spec/LR+/LR- for ACS, non-selected patient group)"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: >
+    Diagnostic meta-analysis, 28 studies, MEDLINE/EMBASE/CINAHL to May 2006.
+    Reports pooled sens/spec/LR+/LR- separately for AMI and ACS (=AMI+UA)
+    outcomes, and separately for "non-selected" (GP/paramedic/ED-recruited,
+    closer to undifferentiated) vs "selected" (coronary care unit/cardiologist
+    -recruited) populations. Non-selected/ACS values used here as closest
+    population match to this project's ED_UNDIFFERENTIATED_CHEST_PAIN prior.
+    IMPORTANT SCOPE CAVEAT: "ACS" as defined by this paper = AMI + unstable
+    angina combined. Extracted LRs are for "has ACS", not "has UA
+    specifically" -- a genuine scope broadening versus this project's
+    UNSTABLE_ANGINA-only hypothesis. No source found (paywalled or
+    unavailable) that isolates UA-only diagnostic accuracy for these
+    findings; this is the best available proxy. Flagged prominently in
+    EXTRACTION_NOTES. Many findings (back pain, epigastric pain, sweating,
+    nausea) excluded from extraction due to I-squared >85% (unstable pooled
+    estimates) or LR+ confidence interval crossing 1.0 (epigastric pain --
+    not statistically distinguishable from no effect). Free full text:
+    https://bjgp.org/content/58/547/e1 (BJGP, PMC2233977).
+
+SIX_2008:
+  type: PRIMARY_STUDY
+  title: "Chest pain in the emergency room: value of the HEART score"
+  authors: "Six AJ, Backus BE, Kelder JC"
+  year: 2008
+  doi: "TO_VERIFY"
+  evidence_grade: C
+  table_or_figure: "Results section (HEART score category vs combined endpoint, raw counts)"
+  extracted_by: "Claude (AI-assisted extraction, pending human verification)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: >
+    Single-center derivation study, N=120 analyzable. NOT YET USED for any
+    LR in this file -- computable via raw counts (39/59/22 patients across
+    HEART 0-3/4-6/7-10 bands, 1/12/16 reaching endpoint respectively) but
+    endpoint is a composite of AMI+PCI+CABG+death, which is a PROGNOSTIC
+    outcome (predicts adverse event), not a DIAGNOSTIC one (does not
+    directly answer "does this patient have UA"). Retained as a pending
+    decision -- see EXTRACTION_NOTES open items. Small N is an additional
+    weakness independent of the scope issue.
+
+AFP_2024:
+  type: SYSTEMATIC_REVIEW
+  title: "Acute Pericarditis"
+  authors: "American Academy of Family Physicians"
+  year: 2024
+  doi: "NOT_AVAILABLE"
+  evidence_grade: C
+  table_or_figure: "Clinical features prevalence, epidemiology section"
+  extracted_by: "Claude (AI-assisted extraction from guideline source)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: >
+    Open-access guideline review. Pericarditis has limited diagnostic-accuracy
+    meta-analyses in the literature; prevalence ranges and clinical feature
+    frequencies are taken directly from AFP 2024's summary of the evidence base.
+    Point estimates derived from midpoint of reported ranges or direct statements.
+    Evidence grade C reflects guideline-synthesis level, not prospective diagnostic
+    accuracy study. Free full text: https://www.aafp.org/afp
+
+SHADOW_STRUCTURAL:
+  type: SYSTEMATIC_REVIEW
+  title: "Structural Placeholder for Shadow Conditions"
+  authors: "Cardiac CDS project"
+  year: 2026
+  doi: "NOT_APPLICABLE"
+  evidence_grade: D
+  table_or_figure: "SHADOW_CONDITIONS_RATIONALE.md"
+  extracted_by: "Claude (AI-assisted structural template)"
+  extracted_on: "2026-08-08"
+  checked_by: null
+  notes: >
+    Not a real citation. Used as a placeholder for shadow conditions
+    (UNKNOWN sink hypotheses) that are defined structurally rather than sourced
+    from literature. Priors and LRs for shadow conditions are engineering
+    estimates designed to ensure the system distributes probability mass
+    appropriately when a patient's presentation doesn't fit the primary
+    conditions well. See SHADOW_CONDITIONS_RATIONALE.md for full explanation.

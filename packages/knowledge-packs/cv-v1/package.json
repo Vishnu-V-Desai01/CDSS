@@ -1,0 +1,19 @@
+{
+  "name": "@cardiac-cds/knowledge-pack-cv-v1",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cardiovascular acute presentations knowledge pack — condition files, citations, feature registry.",
+  "scripts": {
+    "pack:validate": "ts-node scripts/validate.ts",
+    "pack:build": "ts-node scripts/validate.ts --require-verified"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.11.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}

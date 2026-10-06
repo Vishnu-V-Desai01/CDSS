@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import yaml from "js-yaml";
-import type { CitationsFile, ConditionFile, FeatureRegistryFile } from "@cds/shared-types";
+import type { CitationsFile, ConditionFile, FeatureRegistryFile, RedFlagsFile } from "@cds/shared-types";
 
 export interface LoadedFile<T> {
   path: string;
@@ -28,6 +28,7 @@ export interface LoadedPack {
   conditions: LoadedFile<ConditionFile>[];
   citations: LoadedFile<CitationsFile>;
   featuresRegistry: LoadedFile<FeatureRegistryFile>;
+  redFlags: LoadedFile<RedFlagsFile>;
 }
 
 /**
@@ -36,6 +37,7 @@ export interface LoadedPack {
  *   <packDir>/shadows/*.knowledge.yaml
  *   <packDir>/citations.yaml
  *   <packDir>/features.registry.yaml
+ *   <packDir>/red-flags.yaml
  */
 export function loadPack(packDir: string): LoadedPack {
   const conditionPaths = [
@@ -50,10 +52,12 @@ export function loadPack(packDir: string): LoadedPack {
 
   const citationsPath = join(packDir, "citations.yaml");
   const registryPath = join(packDir, "features.registry.yaml");
+  const redFlagsPath = join(packDir, "red-flags.yaml");
 
   return {
     conditions,
     citations: { path: citationsPath, data: readYaml<CitationsFile>(citationsPath) },
     featuresRegistry: { path: registryPath, data: readYaml<FeatureRegistryFile>(registryPath) },
+    redFlags: { path: redFlagsPath, data: readYaml<RedFlagsFile>(redFlagsPath) },
   };
 }

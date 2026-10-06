@@ -1,0 +1,117 @@
+RF-01:
+  flag_id: RF-01
+  display_name: "Haemodynamic Collapse"
+  clinical_rationale: >
+    Systolic BP < 90 mmHg with severe tachycardia (HR > 130) indicates
+    cardiogenic shock or decompensation requiring immediate resuscitation
+    over diagnostic workup. Applicable across all four candidate conditions
+    at their most severe. Policy rule, not literature-derived — see
+    RED_FLAGS_RATIONALE.md.
+  triggers:
+    - finding_id: SYSTOLIC_BLOOD_PRESSURE_CATEGORY
+      required_state: HYPOTENSIVE
+      description: "Systolic BP < 90 mmHg"
+    - finding_id: HEART_RATE_CATEGORY
+      required_state: SEVERE_TACHYCARDIA
+      description: "Heart rate > 130 bpm"
+  trigger_logic: ALL
+  halt_message: >
+    Haemodynamic collapse detected. Differential diagnosis deferred.
+    Initiate resuscitation: IV fluids, vasopressor support, urgent
+    cardiology consultation.
+  confidence: CERTAIN
+
+RF-02:
+  flag_id: RF-02
+  display_name: "Massive PE Suspected"
+  clinical_rationale: >
+    Syncope with severe hypoxia and severe tachycardia together suggest
+    acute right-ventricular strain with reduced cardiac output — the
+    clinical picture of massive PE. Requires emergency thrombectomy or
+    thrombolysis, not further diagnostic workup.
+  triggers:
+    - finding_id: SYNCOPE
+      required_state: PRESENT
+      description: "Syncopal episode with current presentation"
+    - finding_id: OXYGEN_SATURATION_CATEGORY
+      required_state: SEVERE_HYPOXIA
+      description: "SpO2 < 88%"
+    - finding_id: HEART_RATE_CATEGORY
+      required_state: SEVERE_TACHYCARDIA
+      description: "Heart rate > 130 bpm"
+  trigger_logic: ALL
+  halt_message: >
+    Massive PE suspected (syncope + severe hypoxia + severe tachycardia).
+    Differential diagnosis deferred. Activate emergency thrombectomy/
+    thrombolysis protocol; urgent CT angiography and interventional
+    cardiology.
+  confidence: CERTAIN
+
+RF-03:
+  flag_id: RF-03
+  display_name: "Acute ST-Elevation MI"
+  clinical_rationale: >
+    ST elevation on ECG indicates acute transmural infarction requiring
+    emergency reperfusion (PCI or thrombolysis). This single finding alone
+    is sufficient to halt — no further workup should delay reperfusion.
+  triggers:
+    - finding_id: ECG_ST_ELEVATION
+      required_state: PRESENT
+      description: "ST elevation ≥1mm in contiguous leads"
+  trigger_logic: ANY
+  halt_message: >
+    Acute ST-elevation MI detected. Differential diagnosis deferred.
+    Activate STEMI protocol: urgent cardiology, reperfusion therapy
+    (PCI or thrombolysis).
+  confidence: CERTAIN
+
+RF-04:
+  flag_id: RF-04
+  display_name: "Acute Pulmonary Oedema with Respiratory Failure"
+  clinical_rationale: >
+    Orthopnoea and pulmonary rales together with severe hypoxia indicate
+    acute decompensated heart failure with impending respiratory failure.
+    Diagnosis is already clear at this point; immediate stabilisation
+    takes priority over further differential workup.
+  triggers:
+    - finding_id: ORTHOPNEA
+      required_state: PRESENT
+      description: "Breathlessness when lying flat"
+    - finding_id: PULMONARY_RALES
+      required_state: PRESENT
+      description: "Bibasal crackles on auscultation"
+    - finding_id: OXYGEN_SATURATION_CATEGORY
+      required_state: SEVERE_HYPOXIA
+      description: "SpO2 < 88%"
+  trigger_logic: ALL
+  halt_message: >
+    Acute decompensated heart failure with pulmonary oedema and
+    respiratory failure. Differential diagnosis deferred. Immediate
+    interventions: high-flow oxygen, IV diuretics, non-invasive
+    ventilation if needed, urgent cardiology.
+  confidence: CERTAIN
+
+RF-05:
+  flag_id: RF-05
+  display_name: "Pericardial Tamponade"
+  clinical_rationale: >
+    Beck's triad component pattern — hypotension, elevated JVP, and
+    muffled heart sounds — indicates cardiac tamponade, a surgical
+    emergency requiring pericardiocentesis before any further workup.
+    Known complication of acute pericarditis.
+  triggers:
+    - finding_id: SYSTOLIC_BLOOD_PRESSURE_CATEGORY
+      required_state: HYPOTENSIVE
+      description: "Systolic BP < 90 mmHg"
+    - finding_id: JVD
+      required_state: PRESENT
+      description: "Jugular venous distension"
+    - finding_id: MUFFLED_HEART_SOUNDS
+      required_state: PRESENT
+      description: "Muffled or distant heart sounds"
+  trigger_logic: ALL
+  halt_message: >
+    Pericardial tamponade suspected (Beck's triad). Differential
+    diagnosis deferred. Emergency bedside echocardiography; prepare for
+    urgent pericardiocentesis; cardiothoracic surgery consultation.
+  confidence: CERTAIN

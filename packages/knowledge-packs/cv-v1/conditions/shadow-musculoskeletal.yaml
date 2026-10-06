@@ -1,0 +1,95 @@
+schema_version: "1.0.0"
+condition_id: SHADOW_MUSCULOSKELETAL
+display_name: "Musculoskeletal Chest Pain"
+class: SHADOW
+visibility: HIDDEN_IN_UNKNOWN
+enabled: true
+verification_status: unverified
+
+priors:
+  ED_UNDIFFERENTIATED_CHEST_PAIN:
+    weight: 0.15
+    citation_id: SHADOW_STRUCTURAL
+    population: >
+      Structural estimate: anxiety/panic accounts for roughly 15% of ED chest
+      pain presentations when organic cardiac/pulmonary/GI causes are ruled out.
+      Not sourced from literature; used as plausible baseline for UNKNOWN sink
+      allocation. See SHADOW_CONDITIONS_RATIONALE.md for full reasoning.
+    verification_status: unverified
+
+dependency_groups: []
+
+features:
+  - feature_id: SYMPTOMS_TRIGGERED_BY_STRESS_OR_PANIC
+    tier: HISTORY
+    dependency_group: null
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 2
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 2.5
+        derived_from:
+          sensitivity: 0.70
+          specificity: 0.72
+          n: 1
+          prevalence_in_study: 0.15
+        citation_id: SHADOW_STRUCTURAL
+      - value: ABSENT
+        lr: 0.42
+        derived_from:
+          sensitivity: 0.70
+          specificity: 0.72
+          n: 1
+          prevalence_in_study: 0.15
+        citation_id: SHADOW_STRUCTURAL
+
+  - feature_id: NORMAL_VITAL_SIGNS
+    tier: BEDSIDE
+    dependency_group: null
+    acquisition_cost: 1
+    prerequisite: null
+    invasiveness: NONE
+    turnaround_minutes: 2
+    verification_status: unverified
+    states:
+      - value: PRESENT
+        lr: 1.8
+        derived_from:
+          sensitivity: 0.60
+          specificity: 0.67
+          n: 1
+          prevalence_in_study: 0.15
+        citation_id: SHADOW_STRUCTURAL
+      - value: ABSENT
+        lr: 0.60
+        derived_from:
+          sensitivity: 0.60
+          specificity: 0.67
+          n: 1
+          prevalence_in_study: 0.15
+        citation_id: SHADOW_STRUCTURAL
+
+expected_profile: []
+red_flag_links: []
+mimics: []
+
+disposition_guidance: >
+  SHADOW CONDITION: This file represents anxiety/panic presentations that do not
+  fit PE, UA, CHF, or Pericarditis. It is not intended to be a standalone
+  anxiety diagnosis, but rather a structural placeholder within the UNKNOWN
+  category. Features are deliberately generic (stress trigger, normal vitals) to
+  capture presentations where organic disease is ruled out but psychological
+  factors predominate. Not reported individually to clinician; aggregated into
+  UNKNOWN probability.
+
+provenance:
+  authors:
+    - "Vishnu — Chat 1 Evidence Sourcing lead"
+    - "Claude — AI-assisted structural template"
+  clinical_reviewer: null
+  created: "2026-08-08"
+  last_reviewed: "2026-08-08"
+  review_due: null

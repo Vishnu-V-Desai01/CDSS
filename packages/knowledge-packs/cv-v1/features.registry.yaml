@@ -1,34 +1,393 @@
-HX_PREVIOUS_VTE:
-  feature_id: HX_PREVIOUS_VTE
-  prompt: "Has the patient had a previous confirmed DVT or PE?"
+# PE features
+WELLS_SCORE_CATEGORY:
+  feature_id: WELLS_SCORE_CATEGORY
+  prompt: "Wells clinical probability score category for PE"
+  tier: BEDSIDE
+  dependency_group: CLINICAL_PRETEST_SCORES
+  state_values: [LOW, INTERMEDIATE, HIGH]
+
+WELLS_DICHOTOMIZED:
+  feature_id: WELLS_DICHOTOMIZED
+  prompt: "Wells score dichotomized (PE unlikely vs PE likely)"
+  tier: BEDSIDE
+  dependency_group: CLINICAL_PRETEST_SCORES
+  state_values: [PE_UNLIKELY, PE_LIKELY]
+
+REVISED_GENEVA_SCORE_CATEGORY:
+  feature_id: REVISED_GENEVA_SCORE_CATEGORY
+  prompt: "Revised Geneva score category for PE"
+  tier: BEDSIDE
+  dependency_group: CLINICAL_PRETEST_SCORES
+  state_values: [LOW, INTERMEDIATE, HIGH]
+
+SIMPLIFIED_GENEVA_SCORE_CATEGORY:
+  feature_id: SIMPLIFIED_GENEVA_SCORE_CATEGORY
+  prompt: "Simplified Geneva score category for PE"
+  tier: BEDSIDE
+  dependency_group: CLINICAL_PRETEST_SCORES
+  state_values: [LOW, INTERMEDIATE, HIGH]
+
+PERC_RULE:
+  feature_id: PERC_RULE
+  prompt: "PERC rule (Pulmonary Embolism Rule-out Criteria)"
+  tier: BEDSIDE
+  dependency_group: CLINICAL_PRETEST_SCORES
+  state_values: [NEGATIVE, POSITIVE]
+
+LEG_SWELLING_UNILATERAL:
+  feature_id: LEG_SWELLING_UNILATERAL
+  prompt: "Is there unilateral leg swelling?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+LEG_PAIN_UNILATERAL:
+  feature_id: LEG_PAIN_UNILATERAL
+  prompt: "Is there unilateral leg pain or calf tenderness?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+RECENT_IMMOBILIZATION:
+  feature_id: RECENT_IMMOBILIZATION
+  prompt: "Recent immobilization (surgery, cast, bedrest)?"
   tier: HISTORY
   dependency_group: null
-  state_values: [PRESENT, ABSENT, INDETERMINATE]
+  state_values: [PRESENT, ABSENT]
 
-VS_SPO2_ROOM_AIR:
-  feature_id: VS_SPO2_ROOM_AIR
-  prompt: "What is the SpO2 on room air?"
-  tier: BEDSIDE
-  dependency_group: OXYGENATION
-  state_values: [GTE_95, 90_TO_94, LT_90, INDETERMINATE]
-
-VS_HEART_RATE:
-  feature_id: VS_HEART_RATE
-  prompt: "What is the heart rate?"
+CLINICAL_DVT_PROBABILITY:
+  feature_id: CLINICAL_DVT_PROBABILITY
+  prompt: "Clinical probability of DVT based on presentation"
   tier: BEDSIDE
   dependency_group: null
-  state_values: [LT_60, 60_TO_99, 100_TO_119, GTE_120, INDETERMINATE]
+  state_values: [HIGH, MODERATE, LOW]
 
-EX_UNILATERAL_LEG_SWELLING:
-  feature_id: EX_UNILATERAL_LEG_SWELLING
-  prompt: "Is there unilateral leg swelling or calf tenderness?"
-  tier: BEDSIDE
-  dependency_group: DVT_SIGNS
-  state_values: [PRESENT, ABSENT, INDETERMINATE]
-
-LAB_DDIMER_HIGHSENS:
-  feature_id: LAB_DDIMER_HIGHSENS
-  prompt: "What was the high-sensitivity D-dimer result?"
+D_DIMER_ELFA:
+  feature_id: D_DIMER_ELFA
+  prompt: "D-dimer level (ELFA assay)"
   tier: NEAR_BEDSIDE
   dependency_group: null
-  state_values: [POSITIVE, NEGATIVE, INDETERMINATE]
+  state_values: [ELEVATED, NEGATIVE]
+
+D_DIMER_MICROPLATE_ELISA:
+  feature_id: D_DIMER_MICROPLATE_ELISA
+  prompt: "D-dimer level (Microplate ELISA assay)"
+  tier: NEAR_BEDSIDE
+  dependency_group: null
+  state_values: [ELEVATED, NEGATIVE]
+
+D_DIMER_LATEX_QUANTITATIVE:
+  feature_id: D_DIMER_LATEX_QUANTITATIVE
+  prompt: "D-dimer level (Latex quantitative assay)"
+  tier: NEAR_BEDSIDE
+  dependency_group: null
+  state_values: [ELEVATED, NEGATIVE]
+
+# CHF features
+PRIOR_CHF_HISTORY:
+  feature_id: PRIOR_CHF_HISTORY
+  prompt: "Prior history of congestive heart failure?"
+  tier: HISTORY
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+PRIOR_MI_HISTORY:
+  feature_id: PRIOR_MI_HISTORY
+  prompt: "Prior myocardial infarction history?"
+  tier: HISTORY
+  dependency_group: ISCHEMIC_HISTORY_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+CAD_HISTORY:
+  feature_id: CAD_HISTORY
+  prompt: "History of coronary artery disease?"
+  tier: HISTORY
+  dependency_group: ISCHEMIC_HISTORY_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+PAROXYSMAL_NOCTURNAL_DYSPNEA:
+  feature_id: PAROXYSMAL_NOCTURNAL_DYSPNEA
+  prompt: "Paroxysmal nocturnal dyspnea (wakes at night short of breath)?"
+  tier: HISTORY
+  dependency_group: DYSPNEA_SYMPTOM_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+NOCTURNAL_DYSPNEA_ON_EXERTION:
+  feature_id: NOCTURNAL_DYSPNEA_ON_EXERTION
+  prompt: "Dyspnea on exertion?"
+  tier: HISTORY
+  dependency_group: DYSPNEA_SYMPTOM_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+DYSPNEA_ON_EXERTION:
+  feature_id: DYSPNEA_ON_EXERTION
+  prompt: "Dyspnea on exertion?"
+  tier: HISTORY
+  dependency_group: DYSPNEA_SYMPTOM_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+ORTHOPNEA:
+  feature_id: ORTHOPNEA
+  prompt: "Does the patient experience orthopnea (shortness of breath when lying flat)?"
+  tier: HISTORY
+  dependency_group: DYSPNEA_SYMPTOM_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+ORTHOPNEA_OR_PND:
+  feature_id: ORTHOPNEA_OR_PND
+  prompt: "Does the patient experience orthopnea or paroxysmal nocturnal dyspnea?"
+  tier: HISTORY
+  dependency_group: DYSPNEA_SYMPTOM_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+JVD:
+  feature_id: JVD
+  prompt: "Is jugular venous distension present?"
+  tier: BEDSIDE
+  dependency_group: CONGESTION_SIGN_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+JUGULAR_VENOUS_DISTENSION:
+  feature_id: JUGULAR_VENOUS_DISTENSION
+  prompt: "Jugular venous distension?"
+  tier: BEDSIDE
+  dependency_group: CONGESTION_SIGN_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+S3_GALLOP:
+  feature_id: S3_GALLOP
+  prompt: "Is an S3 gallop present on cardiac auscultation?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+THIRD_HEART_SOUND:
+  feature_id: THIRD_HEART_SOUND
+  prompt: "Third heart sound on auscultation?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+PULMONARY_RALES:
+  feature_id: PULMONARY_RALES
+  prompt: "Pulmonary rales on auscultation?"
+  tier: BEDSIDE
+  dependency_group: CONGESTION_SIGN_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+CARDIAC_MURMUR:
+  feature_id: CARDIAC_MURMUR
+  prompt: "Cardiac murmur on auscultation?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+LOWER_EXTREMITY_EDEMA:
+  feature_id: LOWER_EXTREMITY_EDEMA
+  prompt: "Lower extremity edema?"
+  tier: BEDSIDE
+  dependency_group: CONGESTION_SIGN_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+WHEEZE:
+  feature_id: WHEEZE
+  prompt: "Wheezing on lung auscultation?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+WHEEZING:
+  feature_id: WHEEZING
+  prompt: "Wheezing on lung auscultation?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+CXR_PULMONARY_VENOUS_CONGESTION:
+  feature_id: CXR_PULMONARY_VENOUS_CONGESTION
+  prompt: "Pulmonary venous congestion on chest X-ray?"
+  tier: IMAGING
+  dependency_group: CONGESTION_SIGN_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+CXR_INTERSTITIAL_EDEMA:
+  feature_id: CXR_INTERSTITIAL_EDEMA
+  prompt: "Interstitial edema on chest X-ray?"
+  tier: IMAGING
+  dependency_group: CONGESTION_SIGN_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+CXR_CARDIOMEGALY:
+  feature_id: CXR_CARDIOMEGALY
+  prompt: "Cardiomegaly on chest X-ray?"
+  tier: IMAGING
+  dependency_group: CONGESTION_SIGN_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+CXR_PLEURAL_EFFUSION:
+  feature_id: CXR_PLEURAL_EFFUSION
+  prompt: "Pleural effusion on chest X-ray?"
+  tier: IMAGING
+  dependency_group: CONGESTION_SIGN_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+PULMONARY_EDEMA_ON_IMAGING:
+  feature_id: PULMONARY_EDEMA_ON_IMAGING
+  prompt: "Is pulmonary edema visible on chest X-ray?"
+  tier: IMAGING
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+ECG_ATRIAL_FIBRILLATION:
+  feature_id: ECG_ATRIAL_FIBRILLATION
+  prompt: "Atrial fibrillation on ECG?"
+  tier: BEDSIDE
+  dependency_group: ECG_FINDINGS_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+ECG_NEW_T_WAVE_CHANGES:
+  feature_id: ECG_NEW_T_WAVE_CHANGES
+  prompt: "New T wave changes on ECG?"
+  tier: BEDSIDE
+  dependency_group: ECG_FINDINGS_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+ECG_ANY_ABNORMAL_FINDING:
+  feature_id: ECG_ANY_ABNORMAL_FINDING
+  prompt: "Any abnormal finding on ECG?"
+  tier: BEDSIDE
+  dependency_group: ECG_FINDINGS_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+INITIAL_CLINICAL_JUDGMENT_CHF:
+  feature_id: INITIAL_CLINICAL_JUDGMENT_CHF
+  prompt: "Initial clinical suspicion for heart failure"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [HIGH_SUSPICION, NOT_HIGH_SUSPICION]
+
+BNP:
+  feature_id: BNP
+  prompt: "B-type natriuretic peptide level"
+  tier: NEAR_BEDSIDE
+  dependency_group: null
+  state_values: [ELEVATED, NEGATIVE]
+
+# UA features
+CHEST_WALL_TENDERNESS:
+  feature_id: CHEST_WALL_TENDERNESS
+  prompt: "Is pain reproducible or tenderness elicited on palpation of the chest wall?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+PAIN_RADIATION_RIGHT_ARM_SHOULDER:
+  feature_id: PAIN_RADIATION_RIGHT_ARM_SHOULDER
+  prompt: "Does the chest pain radiate to the right arm and/or shoulder?"
+  tier: HISTORY
+  dependency_group: RADIATION_SITE_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+PAIN_RADIATION_NECK:
+  feature_id: PAIN_RADIATION_NECK
+  prompt: "Does the chest pain radiate to the neck?"
+  tier: HISTORY
+  dependency_group: RADIATION_SITE_CLUSTER
+  state_values: [PRESENT, ABSENT]
+
+CHEST_PAIN_OPPRESSIVE_CHARACTER:
+  feature_id: CHEST_PAIN_OPPRESSIVE_CHARACTER
+  prompt: "Is the chest pain described as oppressive/pressure-like in character?"
+  tier: HISTORY
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+# Pericarditis features
+CHEST_PAIN_PLEURITIC:
+  feature_id: CHEST_PAIN_PLEURITIC
+  prompt: "Is the chest pain pleuritic (worse with breathing or movement)?"
+  tier: HISTORY
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+PERICARDIAL_FRICTION_RUB:
+  feature_id: PERICARDIAL_FRICTION_RUB
+  prompt: "Is a pericardial friction rub present on auscultation?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+CHEST_PAIN_POSITIONAL_RELIEF:
+  feature_id: CHEST_PAIN_POSITIONAL_RELIEF
+  prompt: "Is chest pain relieved by leaning forward or worse when supine?"
+  tier: HISTORY
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+PERICARDIAL_IMAGING_ABNORMAL:
+  feature_id: PERICARDIAL_IMAGING_ABNORMAL
+  prompt: "Is pericardial involvement shown on imaging (echo/CT/CMR)?"
+  tier: IMAGING
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+# Shadow condition features
+SYMPTOMS_TRIGGERED_BY_STRESS_OR_PANIC:
+  feature_id: SYMPTOMS_TRIGGERED_BY_STRESS_OR_PANIC
+  prompt: "Are symptoms temporally associated with stress or triggered by anxiety/panic?"
+  tier: HISTORY
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+NORMAL_VITAL_SIGNS:
+  feature_id: NORMAL_VITAL_SIGNS
+  prompt: "Are all vital signs (HR, BP, RR, SpO2) normal?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+  # Red-flag features (RF-01..RF-05) — structural, not literature-sourced.
+# These are acute danger signs, not differential-diagnosis findings, so they
+# carry no dependency_group (they never participate in the LR redundancy
+# discount) and are never referenced inside any condition file's features list.
+
+SYSTOLIC_BLOOD_PRESSURE_CATEGORY:
+  feature_id: SYSTOLIC_BLOOD_PRESSURE_CATEGORY
+  prompt: "Systolic blood pressure category"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [HYPOTENSIVE, NORMAL, HYPERTENSIVE]
+
+HEART_RATE_CATEGORY:
+  feature_id: HEART_RATE_CATEGORY
+  prompt: "Heart rate category"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [BRADYCARDIA, NORMAL, TACHYCARDIA, SEVERE_TACHYCARDIA]
+
+OXYGEN_SATURATION_CATEGORY:
+  feature_id: OXYGEN_SATURATION_CATEGORY
+  prompt: "Oxygen saturation category"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [SEVERE_HYPOXIA, MILD_HYPOXIA, NORMAL]
+
+SYNCOPE:
+  feature_id: SYNCOPE
+  prompt: "Has the patient had a syncopal episode with this presentation?"
+  tier: HISTORY
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+ECG_ST_ELEVATION:
+  feature_id: ECG_ST_ELEVATION
+  prompt: "ST elevation ≥1mm in contiguous leads on ECG?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]
+
+MUFFLED_HEART_SOUNDS:
+  feature_id: MUFFLED_HEART_SOUNDS
+  prompt: "Muffled or distant heart sounds on auscultation?"
+  tier: BEDSIDE
+  dependency_group: null
+  state_values: [PRESENT, ABSENT]

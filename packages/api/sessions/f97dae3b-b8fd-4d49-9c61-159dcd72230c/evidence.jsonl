@@ -1,0 +1,8 @@
+{"id":"d969e105-fe3a-46fa-bcae-2ef5bc239392","featureId":"VS_HEART_RATE","value":"145","source":"MEASURED","observedAt":"2026-10-06T04:26:34.503Z","observerConfidence":"HIGH","turn":1,"rawValue":145}
+{"id":"f4f825d2-1d58-4fef-afc8-cde9f80262ef","featureId":"VS_RESP_RATE","value":"18","source":"MEASURED","observedAt":"2026-10-06T04:26:34.534Z","observerConfidence":"HIGH","turn":2,"rawValue":18}
+{"id":"b4b36c41-9b64-4484-b68c-e3a0087012e5","featureId":"VS_SBP","value":"84","source":"MEASURED","observedAt":"2026-10-06T04:26:34.557Z","observerConfidence":"HIGH","turn":3,"rawValue":84}
+{"id":"03bde097-7706-4cef-a8a1-631d19b10fe7","featureId":"VS_SBP","value":"128","source":"MEASURED","observedAt":"2026-10-06T04:27:09.311Z","observerConfidence":"HIGH","turn":4,"corrects":"b4b36c41-9b64-4484-b68c-e3a0087012e5","rawValue":128}
+{"id":"0cf2823a-596a-43a3-9370-9ca4c556b2a9","featureId":"VS_DBP","value":"50","source":"MEASURED","observedAt":"2026-10-06T04:27:36.329Z","observerConfidence":"HIGH","turn":5,"rawValue":50}
+{"id":"8d3e3881-1b82-4c85-9137-80046f28a279","featureId":"VS_SPO2_ROOM_AIR","value":"97","source":"MEASURED","observedAt":"2026-10-06T04:27:36.347Z","observerConfidence":"HIGH","turn":6,"rawValue":97}
+{"id":"5d06db03-f1c5-443a-bee9-1349d9c6b99e","featureId":"VS_TEMPERATURE","value":"36","source":"MEASURED","observedAt":"2026-10-06T04:27:36.362Z","observerConfidence":"HIGH","turn":7,"rawValue":36}
+{"id":"26b31eb2-2dc4-411a-b317-5890009a5c67","featureId":"EX_MENTAL_STATUS","value":"ALERT","source":"OBSERVED","observedAt":"2026-10-06T04:27:36.398Z","observerConfidence":"HIGH","turn":8}

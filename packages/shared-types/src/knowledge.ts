@@ -118,3 +118,28 @@ export interface FeatureRegistryEntry {
 }
 
 export type FeatureRegistryFile = Record<string, FeatureRegistryEntry>;
+
+/** §4.3 — one condition that must hold for a trigger to fire. */
+export interface RedFlagTrigger {
+  finding_id: string;
+  required_state: string;
+  description: string;
+}
+
+/**
+ * §4.3 — a deterministic halt rule. Unlike ConditionFile, this is policy
+ * authored by the clinical lead, not literature-derived — hence no
+ * citation_id or derived_from anywhere in this shape.
+ */
+export interface RedFlagRule {
+  flag_id: RedFlagId;
+  display_name: string;
+  clinical_rationale: string;
+  triggers: RedFlagTrigger[];
+  trigger_logic: "ALL" | "ANY";
+  halt_message: string;
+  confidence: "CERTAIN" | "PROBABLE";
+}
+
+/** red-flags.yaml — keyed by flag_id, matching the citations/registry pattern. */
+export type RedFlagsFile = Record<string, RedFlagRule>;
